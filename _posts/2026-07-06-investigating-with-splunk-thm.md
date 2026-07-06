@@ -5,9 +5,6 @@ categories: [TryHackMe, DFIR]
 tags: [splunk, siem, log-analysis, powershell, windows, incident-response, threat-hunting]
 ---
 
-> **Note for publishing:** this post references 13 screenshots at paths like `/assets/img/01-....png`. Upload the accompanying `investigating-with-splunk-thm` image folder into your repo's `assets/img/` directory (create it if it doesn't exist) so the paths resolve correctly.
-{: .prompt-tip }
-
 ## Overview
 
 **Room:** [Investigating with Splunk](https://tryhackme.com/room/investigatingwithsplunk)
