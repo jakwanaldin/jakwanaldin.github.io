@@ -17,6 +17,12 @@ description: >-
 
 url: "https://jakwanaldin.github.io"
 
+author:
+  name: Jakwan Aldin
+  github: jakwanaldin
+  twitter: 
+# -------------------------------------------------------------
+
 github:
   username: jakwanaldin
 
@@ -62,7 +68,6 @@ pageviews:
 
 theme_mode: # [light | dark]
 
-# cdn: removed intentionally
 
 avatar: "https://avatars.githubusercontent.com/u/179132094?s=400&u=fb936c979f6831eab921e9e3fb1f1c27bee204eb&v=4"
 
