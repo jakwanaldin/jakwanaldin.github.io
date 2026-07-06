@@ -17,17 +17,11 @@ description: >-
 
 url: "https://jakwanaldin.github.io"
 
-author:
-  name: Jakwan Aldin
-  github: jakwanaldin
-  twitter: 
-# -------------------------------------------------------------
-
 github:
   username: jakwanaldin
 
 twitter:
-  username: # leave blank
+  username:
 
 social:
   name: Jakwan Aldin
@@ -68,12 +62,13 @@ pageviews:
 
 theme_mode: # [light | dark]
 
-
 avatar: "https://avatars.githubusercontent.com/u/179132094?s=400&u=fb936c979f6831eab921e9e3fb1f1c27bee204eb&v=4"
 
 social_preview_image:
 
 toc: true
+
+future: true
 
 actions:
   edit_post:
@@ -109,6 +104,7 @@ pwa:
   cache:
     enabled: true
     deny_paths:
+
 
 paginate: 10
 
