@@ -6,7 +6,7 @@ order: 4
 
 ## Hi, I'm Jakwan Aldin
 
-I'm a Security Analyst based in Dhaka, Bangladesh, with a background in web application penetration testing and DFIR. In September 2026, I'll be relocating to Dublin, Ireland to begin an **MSc in Cybersecurity at National College of Ireland (NCI)** as a 75th Anniversary Scholarship recipient.
+I'm a Security Analyst based in Dhaka, Bangladesh, with a background in web application penetration testing and DFIR.
 
 ---
 
@@ -32,9 +32,6 @@ Conducted 20+ web application penetration tests, identifying 80+ vulnerabilities
 
 ## Education
 
-**MSc Cybersecurity — National College of Ireland, Dublin** *(Starting Sept 2026)*  
-75th Anniversary Scholarship Recipient
-
 **BSc Computer Science & Engineering — Ahsanullah University of Science and Technology (AUST)**  
 CGPA: 3.225/4.00 | IELTS: 7.5
 
@@ -44,7 +41,7 @@ CGPA: 3.225/4.00 | IELTS: 7.5
 
 This site is where I document TryHackMe and HackTheBox walkthroughs, VAPT research, and notes from my journey through the cybersecurity space. The goal is to write the kind of technical writeups that actually explain the *why* behind each step, not just the commands.
 
-My long-term goal is to return to Bangladesh in a cybersecurity leadership role focused on critical infrastructure after completing my MSc.
+My long-term goal is to see myself in a cybersecurity leadership role focused on critical infrastructure and build AI driven solution to help everyone. 
 
 ---
 
