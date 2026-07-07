@@ -48,7 +48,6 @@ The hint directs us to look for `transaction.remote_address`, which captures the
 ![Checking transaction.remote_address for any other address](/assets/img/thm-slingshot-walkthrough/so-checking-for-any-other-address.png)
 _`transaction.remote_address` field reveals the dominant traffic source_
 
-![Results showing 10.0.2.15 as the attacker IP](/assets/img/thm-slingshot-walkthrough/results.png)
 _`10.0.2.15` dominates traffic — confirmed as the attacker's IP address_
 
 **Answer: `10.0.2.15`**
@@ -161,7 +160,10 @@ To find the successful credential, we need to identify the single Hydra request 
 ![Filters applied for username and password extraction](/assets/img/thm-slingshot-walkthrough/filters-for-usernamepassword.png)
 _Stacking filters to isolate the single successful authentication event_
 
-Expanding the matching event and examining the `Authorization` header reveals a Base64-encoded credential string. Decoding it in CyberChef (`From Base64`) reveals the plaintext credentials:
+Expanding the matching event and examining the `Authorization` header reveals a Base64-encoded credential string. 
+![Results showing 10.0.2.15 as the attacker IP](/assets/img/thm-slingshot-walkthrough/results.png)
+
+Decoding it in CyberChef (`From Base64`) reveals the plaintext credentials:
 
 ![Username and password decoded from the authorization header](/assets/img/thm-slingshot-walkthrough/username-password.png)
 _Base64-decoded Authorization header revealing the admin credentials_
