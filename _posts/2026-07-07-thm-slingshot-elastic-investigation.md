@@ -43,6 +43,9 @@ The first step is identifying the source of the malicious traffic. The logical f
 ![Checking for a source IP field in Kibana — field not available](/assets/img/thm-slingshot-walkthrough/no-source-ip.png)
 _No `source.ip` field available — need to look elsewhere_
 
+![Hint 1](/assets/img/thm-slingshot-walkthrough/hint-1.png)
+_1st hint to find the ip address_
+
 The hint directs us to look for `transaction.remote_address`, which captures the client IP making requests to the web server. Filtering on this field and sorting by frequency immediately surfaces one IP responsible for the overwhelming majority of web traffic.
 
 ![Checking transaction.remote_address for any other address](/assets/img/thm-slingshot-walkthrough/so-checking-for-any-other-address.png)
@@ -57,6 +60,9 @@ _`10.0.2.15` dominates traffic — confirmed as the attacker's IP address_
 ## Question 2: What is the First Scanner the Attacker Ran?
 
 With the attacker's IP confirmed, the next step is understanding what they did first. The `request.header.UserAgent` field exposes what tools were making requests. Selecting this field and examining the values:
+
+![Hint 2](/assets/img/thm-slingshot-walkthrough/hint-2.png)
+_2nd hint to First Scanner the Attacker Ran_
 
 ![Selecting the UserAgent field in Kibana](/assets/img/thm-slingshot-walkthrough/select-useragent.png)
 _Selecting `request.header.UserAgent` to inspect tool signatures_
@@ -105,6 +111,9 @@ The filter returns **1,867 events** — confirming the scale of the Gobuster sca
 ## Question 5: What Flag Was Discovered During Enumeration?
 
 With Gobuster identified as the enumeration tool, filtering the logs to show only Gobuster traffic lets us see exactly which URLs the tool successfully found (200 responses among the 404 noise):
+
+![Hint 5](/assets/img/thm-slingshot-walkthrough/hint-5.png)
+_hint to discover the enumeration tool_
 
 ![Filtering logs by Gobuster User-Agent](/assets/img/thm-slingshot-walkthrough/filter-gobuster.png)
 _Filtering to Gobuster requests only_
