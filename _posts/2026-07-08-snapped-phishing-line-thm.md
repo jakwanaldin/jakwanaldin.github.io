@@ -5,8 +5,7 @@ categories: [TryHackMe, Phishing Analysis]
 tags: [phishing, credential-harvesting, osint, virustotal, cyberchef, phishing-kit, incident-response]
 ---
 
-> **Note for publishing:** this post references screenshots at paths like `/assets/img/thm-snapped_phishing_line-walkthrough/....png`. Upload the accompanying `thm-snapped_phishing_line-walkthrough` image folder into your repo's `assets/img/` directory (create it if it doesn't exist) so the paths resolve correctly.
-{: .prompt-tip }
+![Downloading the phishing kit archive](/assets/img/thm-snapped_phishing_line-walkthrough/download.png)
 
 ## Overview
 
@@ -100,7 +99,6 @@ The archive was downloaded to the analysis VM and hashed before any further hand
 sha256sum Update365.zip
 ```
 
-![Downloading the phishing kit archive](/assets/img/thm-snapped_phishing_line-walkthrough/download.png)
 _Downloading `Update365.zip` to the VM_
 
 ![SHA256 hash of the archive](/assets/img/thm-snapped_phishing_line-walkthrough/hash.png)
