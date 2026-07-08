@@ -1,0 +1,65 @@
+A sales executive at Greenholt PLC has reported a suspicious email received from a known customer. The message raised several red flags: a generic greeting, an unexpected request for a money transfer, and an unsolicited attachment. According to the employee, this behavior does not align with the customer’s usual communication style. Concerned that the email may be malicious, the message has been escalated to the SOC (Security Operations Center) for further investigation. Your goal is to analyze the provided email sample and determine whether it is legitimate or part of a phishing attempt.
+
+
+
+Objectives
+Analyze the provided email to identify and extract key artifacts
+Investigate the message source to determine its origin and authenticity
+Use analysis tools to assess the potential maliciousness of the email
+Prerequisites
+It is suggested that you complete the previous four rooms of the Phishing Analysis Module to help prepare you for email analysis: 
+
+Check out Phishing Analysis Fundamentals for an overview of email communications and analysis
+Go over Phishing Emails in Action to gain some experience analyzing real phishing emails
+Explore Phishing Analysis Tools to learn about tools that enable deeper email analysis
+Cover Phishing Prevention to learn about detecting and stopping email threats
+Lab Access
+To begin, click the Start Lab Machine button to deploy the lab machine. Once the environment has loaded in the split-screen view, navigate to the desktop and open the challenge.eml file to begin your investigation. Good luck, analyst!
+
+Set up your virtual environment
+To successfully complete this room, you'll need to set up your virtual environment. This involves starting the Target Machine, ensuring you're equipped with the necessary tools and access to tackle the challenges ahead.
+
+Lab machineMachine info
+Status:
+Off
+
+Start Lab Machine
+Answer the questions below
+
+
+1. What is the Transfer Reference Number listed in the email's Subject line?
+- 09674321
+
+2. What is the display name of the sender?
+- Mr. James Jackson
+
+3. What is the sender's email address?
+- info@mutawamarine.com
+
+4. What email address will receive a reply to this email?
+- info.mutawamarine@mail.com
+
+5. What is the originating IP address of this email?
+- 192.119.71.157
+
+6. Who is the owner of the originating IP?
+- HostPapa
+
+7. What is the full SPF record for this domain?
+- v=spf1 include:spf.protection.outlook.com -all
+
+8. What is the complete DMARC record for this domain?
+- v=DMARC1; p=quarantine; fo=1
+
+9. What is the file name of the attachment found in the email?
+- SWT_#09674321____PDF__.CAB
+
+10. Using the sha256sum command, what is the SHA256 hash of the file?
+- 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f
+
+11. What is the attachment's file size in KB (e.g., 122.31 KB)?
+- 400.26 KB
+
+12. What is the actual file type of the attachment?
+- RAR
+
