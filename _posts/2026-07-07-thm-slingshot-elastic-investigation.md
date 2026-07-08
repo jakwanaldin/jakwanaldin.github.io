@@ -31,7 +31,7 @@ Before starting the investigation, two things are essential:
 
 **2. Set the time frame** — configure the time range to `Jul 26, 2023 @ 00:00:00.000 → now` to capture all activity from the date Slingway's IT team flagged as the start of suspicious behaviour.
 
-![Setting the date and time range in Kibana to July 26 2023](/assets/img/thm-slingshot-walkthrough/Setting date and time.png)
+[![Setting the date and time range in Kibana to July 26 2023](https://github.com/jakwanaldin/jakwanaldin.github.io/blob/11b075602f53041e4eaf33d0dc6e2db269a8aa53/assets/img/thm-slingshot-walkthrough/Setting%20date%20and%20time.png)
 _Time range set to July 26, 2023 onwards — capturing the full suspected attack window_
 
 ---
