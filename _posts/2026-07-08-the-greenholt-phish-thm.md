@@ -5,7 +5,7 @@ categories: [TryHackMe, Phishing Analysis]
 tags: [phishing, email-analysis, soc, spf, dmarc, bec, header-analysis]
 ---
 
-(/assets/img/thm-greenholt_phish-walkthroug/616945d482ef350052080da1-1774407310807.png)
+![](/assets/img/thm-greenholt_phish-walkthroug/ref-num.png)
 
 ## Overview
 
