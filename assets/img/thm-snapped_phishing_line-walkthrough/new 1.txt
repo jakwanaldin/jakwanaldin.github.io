@@ -1,0 +1,45 @@
+Begin reviewing the emails in the phish-emails folder on your desktop.
+
+1. Which individual received the email regarding a Quote for Services Rendered?
+- William McClean
+
+2. What email address was used by the adversary to send the phishing emails?
+- Accounts.Payable@groupmarketingonline.icu
+
+Investigate the attachment in the email addressed to Zoe Duncan.
+3. What is the root domain of the redirection URL found within the file?
+- kennaroads.buzz
+
+Open the attachment in your VM web browser.
+4. Which company is the login page impersonating?
+- Microsoft
+
+Let’s check if the attacker left any files exposed on the same website.
+Navigate to the /data directory.
+5. What is the name of the archive file?
+- Update365.zip
+
+Download the phishing kit archive to your virtual environment.
+6. Using the sha256sum command, what is the SHA256 hash of the file?
+- ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686
+
+Investigate the file hash from the previous question using VirusTotal 
+7. Aside from phishing, what other threat category is assigned to the ZIP archive?
+- Trojan
+
+Review the VirusTotal Details page for the phishing kit.
+8. How many files are contained within the archive?
+- 49
+
+Let’s see if the attacker has exposed any captured credentials.
+Navigate to the /data/Update365/ directory and investigate the log file.
+9. What is the email address of the user who submitted their credentials more than once?
+- michael.ascot@swiftspend.finance
+
+Extract the phishing kit archive and locate the submit.php file.
+10. What email address is used by the adversary to collect compromised credentials?
+- m3npat@yandex.com
+
+Return to the phishing URL and locate the flag.txt file.
+11. Using CyberChef (opens in new tab) to decode the flag, what is the secret value?
+- THM{pL4y_w1Th_tH3_URL}
