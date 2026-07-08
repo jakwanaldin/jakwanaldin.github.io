@@ -1,7 +1,7 @@
 <!-- The Side Bar -->
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
-  <header class="profile-wrapper" {% if page.url == "/" %}style="visibility: hidden;"{% endif %}>
+  <header class="profile-wrapper" {% if page.url == "/" or page.layout == "home" or page.layout == "landing" %}style="opacity: 0; pointer-events: none; min-height: 180px;"{% endif %}>
     <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
       {%- if site.avatar != empty and site.avatar -%}
         {%- capture avatar_url -%}
