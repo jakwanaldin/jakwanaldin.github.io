@@ -185,7 +185,7 @@ _Base64-decoded Authorization header revealing the admin credentials_
 
 With admin access gained via `admin:thx1138`, the attacker moved to the file upload functionality. Filtering for `http.method = POST` and searching for `upload` in the URL field surfaces the upload activity:
 
-![Filtering by POST method and upload in the search bar](/assets/img/thm-slingshot-walkthrough/filter-upload.png)
+![Customized upload PHP showing the flag in the request body](/assets/img/thm-slingshot-walkthrough/Customize-upload-php.png)
 _POST requests to `/admin/upload.php` identified_
 
 ![Upload activity shown in Kibana — upload-1](/assets/img/thm-slingshot-walkthrough/upload-1.png)
@@ -193,7 +193,7 @@ _Upload event captured in the logs_
 
 Expanding the event and examining the request body reveals a flag embedded in the uploaded file content:
 
-![Customized upload PHP showing the flag in the request body](/assets/img/thm-slingshot-walkthrough/Customize-upload-php.png)
+![Filtering by POST method and upload in the search bar](/assets/img/thm-slingshot-walkthrough/filter-upload.png)
 _Flag found in the uploaded file content_
 
 **Answer: `THM{ecb012e53a58818cbd17a924769ec447}`**
