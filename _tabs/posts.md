@@ -2,6 +2,6 @@
 layout: home
 title: Posts
 icon: fas fa-pen-to-square
-order: 1
+order: 2
 permalink: /posts/
 ---
