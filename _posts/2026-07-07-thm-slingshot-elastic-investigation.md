@@ -4,7 +4,7 @@ date: 2026-07-07 10:00:00 +0600
 categories: [TryHackMe, DFIR]
 tags: [elastic, kibana, siem, log-analysis, web-attack, lfi, brute-force, gobuster, hydra, incident-response]
 ---
-
+![Setting the date and time range in Kibana to July 26 2023](/assets/img/thm-slingshot-walkthrough/slingshot.png)
 ## Overview
 
 **Room:** [Slingshot](https://tryhackme.com/room/slingshot)  
