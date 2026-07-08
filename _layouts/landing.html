@@ -1,58 +1,236 @@
 ---
-layout: default
+layout: compress
 ---
+<!doctype html>
+{% include origin-type.html %}
+{% include lang.html %}
+<html
+  lang="{{ page.lang | default: site.alt_lang | default: site.lang }}"
+  {%- if site.theme_mode == 'light' or site.theme_mode == 'dark' -%}
+    data-bs-theme="{{ site.theme_mode }}"
+  {%- endif -%}
+>
+  {% include head.html lang=lang %}
+    <!-- Cache control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+  <body>
+    {% include sidebar.html lang=lang %}
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        {% include topbar.html lang=lang %}
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 
-<div class="home-hero" style="display: flex; align-items: center; gap: 2rem; padding: 2rem 0; flex-wrap: wrap;">
-  <div style="flex: 0 0 150px; text-align: center;">
-    <img src="https://avatars.githubusercontent.com/u/179132094?s=400&u=fb936c979f6831eab921e9e3fb1f1c27bee204eb&v=4" alt="Jakwan Aldin" style="border-radius: 50%; width: 100%; max-width: 150px; border: 4px solid var(--bs-primary);">
-  </div>
-  <div style="flex: 1;">
-    <h1 style="font-size: 2.5rem;">Hi, I’m Jakwan Aldin</h1>
-    <p style="font-size: 1.2rem; color: var(--bs-secondary-color);">Security Analyst based in Dhaka, Bangladesh</p>
-    <p>Web application penetration testing &amp; DFIR. Moving to Dublin in Sept 2026 for an MSc in Cybersecurity at NCI.</p>
-    <div style="margin-top: 1rem;">
-      <a href="https://github.com/jakwanaldin" class="btn btn-outline-primary">GitHub</a>
-      <a href="https://linkedin.com/in/jakwanaldin" class="btn btn-outline-secondary">LinkedIn</a>
+            <!-- ═══════════════════════════════════════════
+                 HERO
+            ═══════════════════════════════════════════ -->
+            <div class="home-hero">
+              <div class="hero-avatar">
+                <img src="{{ site.avatar }}" alt="{{ site.social.name }}" />
+              </div>
+              <div class="hero-content">
+                <h1 class="hero-name">{{ site.social.name }}</h1>
+                <p class="hero-title">Security Analyst &nbsp;·&nbsp; Cybersecurity Professional</p>
+                <p class="hero-tagline">
+                  Cybersecurity professional with hands-on VAPT experience across 20+ web application
+                  penetration tests. Focused on transitioning into DevSecOps and Incident Response,
+                  with a strong foundation in SIEM, DFIR, and offensive security tooling.
+                </p>
+                <div class="hero-links">
+                  <a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                  {% for link in site.social.links %}
+                    {% if link contains 'linkedin' %}
+                  <a href="{{ link }}" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                  </a>
+                    {% endif %}
+                  {% endfor %}
+                  <a href="mailto:{{ site.social.email }}">
+                    <i class="fas fa-envelope"></i> Email
+                  </a>
+                  <a href="/posts/">
+                    <i class="fas fa-pen-to-square"></i> Writeups
+                  </a>
+                  <a href="/about/">
+                    <i class="fas fa-user"></i> About
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════
+                 SECTIONS
+            ═══════════════════════════════════════════ -->
+            <div class="home-sections">
+
+              <!-- Experience -->
+              <section class="home-section">
+                <h2><i class="fas fa-shield-halved"></i> Experience</h2>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">Security Analyst — VAPT</span>
+                    <span class="exp-company">Arena Web Security</span>
+                  </div>
+                  <p>Conducted 20+ web application penetration tests identifying 80+ vulnerabilities (15 high/critical). Tools: Burp Suite, Metasploit, Acunetix, Nmap, Wireshark, Kali Linux.</p>
+                </div>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">Executive Business Analyst</span>
+                    <span class="exp-company">US-Bangla Airlines</span>
+                  </div>
+                  <p>Product Department — business requirements, feature mapping, and process analysis across airline operations.</p>
+                </div>
+              </section>
+
+              <!-- Skills -->
+              <section class="home-section">
+                <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                <div class="skills-grid">
+                  <div class="skill-group">
+                    <h4>Penetration Testing</h4>
+                    <div class="skill-tags">
+                      <span>Burp Suite</span><span>Metasploit</span><span>Nmap</span>
+                      <span>Acunetix</span><span>Wireshark</span><span>Kali Linux</span>
+                    </div>
+                  </div>
+                  <div class="skill-group">
+                    <h4>SIEM &amp; DFIR</h4>
+                    <div class="skill-tags">
+                      <span>Splunk SPL</span><span>Elastic/Kibana</span><span>Sysmon</span>
+                      <span>Windows Event Logs</span><span>MITRE ATT&amp;CK</span>
+                    </div>
+                  </div>
+                  <div class="skill-group">
+                    <h4>Frameworks</h4>
+                    <div class="skill-tags">
+                      <span>OWASP Top 10</span><span>CVSS</span><span>Incident Response</span>
+                    </div>
+                  </div>
+                  <div class="skill-group">
+                    <h4>Scripting &amp; Dev</h4>
+                    <div class="skill-tags">
+                      <span>Python</span><span>Bash</span><span>SQL</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Education -->
+              <section class="home-section">
+                <h2><i class="fas fa-graduation-cap"></i> Education &amp; Certifications</h2>
+                <div class="edu-item">
+                  <span class="edu-badge">Completed</span>
+                </div>
+                <div class="edu-item">
+                  <strong>BSc Computer Science &amp; Engineering</strong> — AUST, Dhaka
+                  <span class="edu-badge">CGPA 3.225/4.00</span>
+                </div>
+                <div class="edu-item">
+                  <strong>Google Cybersecurity Professional Certificate</strong>
+                </div>
+                <div class="edu-item">
+                  <strong>CompTIA Security+</strong>
+                  <span class="edu-badge">In Progress</span>
+                </div>
+              </section>
+
+              <!-- Latest Writeups -->
+              <section class="home-section">
+                <h2><i class="fas fa-pen-to-square"></i> Latest Writeups</h2>
+                <div class="recent-posts">
+                  {% for post in site.posts limit:3 %}
+                  <a class="post-card" href="{{ post.url }}">
+                    <div class="post-card-title">{{ post.title }}</div>
+                    <div class="post-card-meta">
+                      <span><i class="fas fa-calendar"></i> {{ post.date | date: "%b %d, %Y" }}</span>
+                      {% if post.categories %}
+                      <span><i class="fas fa-folder"></i> {{ post.categories | join: ", " }}</span>
+                      {% endif %}
+                    </div>
+                  </a>
+                  {% endfor %}
+                </div>
+                <div style="text-align:center;margin-top:1rem;">
+                  <a href="/posts/" class="btn-all-posts">View All Posts →</a>
+                </div>
+              </section>
+
+            </div><!-- /.home-sections -->
+
+          </main>
+
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+            <div class="access">
+              {% include_cached update-list.html lang=lang %}
+              {% include_cached trending-tags.html lang=lang %}
+            </div>
+          </aside>
+        </div>
+
+        <div class="row">
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            {% include_cached footer.html lang=lang %}
+          </div>
+        </div>
+        {% include_cached search-results.html lang=lang %}
+      </div>
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
     </div>
-  </div>
-</div>
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+    {% include_cached search-loader.html lang=lang %}
 
-<hr>
+    <!-- ═══════════════════════════════════════════
+         STYLES
+    ═══════════════════════════════════════════ -->
+    <style>
+    .home-hero{display:flex;align-items:center;gap:2rem;padding:2.5rem 0 2rem;border-bottom:1px solid var(--border-color);margin-bottom:2rem;flex-wrap:wrap}
+    .hero-avatar img{width:130px;height:130px;border-radius:50%;object-fit:cover;border:3px solid var(--link-color);flex-shrink:0}
+    .hero-content{flex:1;min-width:220px}
+    .hero-name{font-size:2rem;font-weight:700;margin:0 0 .25rem;color:var(--heading-color)}
+    .hero-title{font-size:1rem;color:var(--text-muted-color);margin:0 0 .75rem;font-weight:500}
+    .hero-tagline{font-size:.95rem;line-height:1.6;color:var(--text-color);margin:0 0 1.25rem;max-width:600px}
+    .hero-links{display:flex;flex-wrap:wrap;gap:.6rem}
+    .hero-links a{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border-radius:20px;font-size:.85rem;font-weight:500;border:1px solid var(--link-color);color:var(--link-color);text-decoration:none;transition:background .2s,color .2s}
+    .hero-links a:hover{background:var(--link-color);color:#fff}
+    .home-sections{display:flex;flex-direction:column;gap:2rem;margin-bottom:2rem}
+    .home-section{background:var(--card-bg);border:1px solid var(--border-color);border-radius:10px;padding:1.5rem 1.75rem}
+    .home-section h2{font-size:1.1rem;font-weight:700;margin:0 0 1.25rem;color:var(--heading-color);display:flex;align-items:center;gap:.5rem}
+    .home-section h2 i{color:var(--link-color)}
+    .exp-item{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border-color)}
+    .exp-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+    .exp-header{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin-bottom:.3rem}
+    .exp-role{font-weight:600;color:var(--heading-color);font-size:.95rem}
+    .exp-company{font-size:.85rem;color:var(--link-color)}
+    .exp-item p{font-size:.88rem;color:var(--text-color);line-height:1.5;margin:0}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem}
+    .skill-group h4{font-size:.85rem;font-weight:600;color:var(--text-muted-color);text-transform:uppercase;letter-spacing:.05em;margin:0 0 .6rem}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .skill-tags span{background:var(--tag-bg);color:var(--text-color);border:1px solid var(--border-color);border-radius:4px;padding:.2rem .55rem;font-size:.78rem}
+    .edu-item{font-size:.9rem;color:var(--text-color);margin-bottom:.7rem;display:flex;align-items:center;flex-wrap:wrap;gap:.5rem}
+    .edu-item:last-child{margin-bottom:0}
+    .edu-badge{background:var(--link-color);color:#fff;border-radius:12px;padding:.15rem .6rem;font-size:.75rem;font-weight:500}
+    .recent-posts{display:flex;flex-direction:column;gap:.65rem}
+    .post-card{display:block;padding:.8rem 1rem;border:1px solid var(--border-color);border-radius:8px;text-decoration:none;transition:border-color .2s,background .2s}
+    .post-card:hover{border-color:var(--link-color)}
+    .post-card-title{font-size:.95rem;font-weight:600;color:var(--heading-color);margin-bottom:.3rem}
+    .post-card-meta{display:flex;gap:1rem;font-size:.78rem;color:var(--text-muted-color)}
+    .post-card-meta i{margin-right:.25rem}
+    .btn-all-posts{display:inline-block;padding:.45rem 1.2rem;border:1px solid var(--link-color);border-radius:20px;color:var(--link-color);font-size:.85rem;font-weight:500;text-decoration:none;transition:background .2s,color .2s}
+    .btn-all-posts:hover{background:var(--link-color);color:#fff}
+    @media(max-width:600px){.home-hero{flex-direction:column;text-align:center}.hero-links{justify-content:center}.skills-grid{grid-template-columns:1fr 1fr}.home-section{padding:1.1rem 1rem}}
+    </style>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-  <div>
-    <h3>💼 Experience</h3>
-    <ul style="list-style: none; padding: 0;">
-      <li><strong>Executive Business Analyst</strong> — US-Bangla Airlines <span style="color: var(--bs-secondary-color);">(2025–2026)</span></li>
-      <li><strong>Security Analyst (VAPT)</strong> — Arena Web Security <span style="color: var(--bs-secondary-color);">(2024–2025)</span></li>
-    </ul>
-  </div>
-  <div>
-    <h3>🛠️ Skills</h3>
-    <ul style="list-style: none; padding: 0;">
-      <li>Burp Suite, Metasploit, Nmap, Nessus, Kali Linux</li>
-      <li>Web App Testing (XSS, SQLi, LFI, CSRF, RCE)</li>
-      <li>Splunk, Elastic Stack, Log Analysis, Incident Response</li>
-    </ul>
-  </div>
-  <div>
-    <h3>🎓 Education</h3>
-    <ul style="list-style: none; padding: 0;">
-      <li><strong>MSc Cybersecurity</strong> — NCI Dublin (2026–2027)</li>
-      <li><strong>B.Sc. in CSE</strong> — AIUB, Bangladesh</li>
-    </ul>
-  </div>
-</div>
-
-<hr>
-
-<h2>📝 Latest Writeups</h2>
-<ul style="list-style: none; padding: 0;">
-  {% for post in site.posts limit:3 %}
-    <li style="margin-bottom: 0.75rem;">
-      <a href="{{ post.url | relative_url }}" style="font-weight: 600;">{{ post.title }}</a>
-      <span style="color: var(--bs-secondary-color); font-size: 0.9rem;">— {{ post.date | date: "%b %d, %Y" }}</span>
-    </li>
-  {% endfor %}
-</ul>
-<p><a href="{{ '/posts/' | relative_url }}">View all posts →</a></p>
+  </body>
+</html>
