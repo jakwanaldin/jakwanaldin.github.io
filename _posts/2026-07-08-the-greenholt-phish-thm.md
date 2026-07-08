@@ -5,7 +5,8 @@ categories: [TryHackMe, Phishing Analysis]
 tags: [phishing, email-analysis, soc, spf, dmarc, bec, header-analysis]
 ---
 
-![](/assets/img/thm-greenholt_phish-walkthroug/ref-num.png)
+> **Note for publishing:** this post references screenshots at paths like `/assets/img/thm-greenholt_phish-walkthroug/....png`. Upload the accompanying `thm-greenholt_phish-walkthroug` image folder into your repo's `assets/img/` directory (create it if it doesn't exist) so the paths resolve correctly.
+{: .prompt-tip }
 
 ## Overview
 
@@ -24,6 +25,9 @@ This writeup documents the process of triaging the reported `.eml` file: extract
 ## Opening the Email Sample
 
 The reported message was provided as `challenge.eml`. Opening it in an email client surfaces the visible headers first — display name, subject, and reply-to — before any deeper header inspection is needed.
+
+![Initial view of the reported email](/assets/img/thm-greenholt_phish-walkthroug/616945d482ef350052080da1-1774407310807.png)
+_The reported email as it appeared to the Greenholt PLC sales executive_
 
 ---
 
