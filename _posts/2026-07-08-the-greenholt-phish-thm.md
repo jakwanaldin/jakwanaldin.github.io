@@ -79,6 +79,8 @@ Received: from ... [192.119.71.157]
 _Originating IP extracted from the Received chain_
 
 A `whois` lookup on that IP identified the owning provider:
+![IP WHOIS search result](/assets/img/thm-greenholt_phish-walkthroug/name.png)
+_Host name fetched from lookup details_
 
 | Field | Value |
 |---|---|
