@@ -30,12 +30,16 @@ This writeup follows the full chain — inbox, to malicious attachment, to spoof
 
 ## Reviewing the Reported Emails
 
+**💡 Hint:** Begin reviewing the emails in the phish-emails folder on your desktop.
+
 Investigation started in the `phish-emails` folder on the desktop, which contained five reported emails. Each was reviewed individually to identify the recipient and sender pattern.
 
 ![Reviewing phishing emails in the phish-emails folder](/assets/img/thm-snapped_phishing_line-walkthrough/to.png)
 _Recipient field on the "Quote for Services Rendered" email_
 
-**Recipient of the "Quote for Services Rendered" email:** `William McClean`
+**❓ Question 1: Which individual received the email regarding a Quote for Services Rendered?**
+
+**✅ Answer:** `William McClean`
 
 ---
 
@@ -46,13 +50,17 @@ Across the batch, the attacker reused a consistent sending address while varying
 ![Sender addresses across the phishing email batch](/assets/img/thm-snapped_phishing_line-walkthrough/other-names.png)
 _Comparing sender details across multiple emails in the batch_
 
-**Adversary's sending address:** `Accounts.Payable@groupmarketingonline.icu`
+**❓ Question 2: What email address was used by the adversary to send the phishing emails?**
+
+**✅ Answer:** `Accounts.Payable@groupmarketingonline.icu`
 
 The `.icu` TLD and generic "group marketing online" domain name are typical of cheap, disposable phishing infrastructure — easy to register and easy to burn after a campaign.
 
 ---
 
 ## Extracting the Redirection URL (Zoe Duncan's Email)
+
+**💡 Hint:** Investigate the attachment in the email addressed to Zoe Duncan.
 
 The email addressed to Zoe Duncan carried an `.html` attachment, so I opened and inspected it directly.
 
@@ -64,11 +72,15 @@ The file contained an embedded redirect to an external domain:
 ![Redirection URL found inside the attachment](/assets/img/thm-snapped_phishing_line-walkthrough/redirect.png)
 _Redirect URL embedded in the attachment_
 
-**Root domain of the redirection URL:** `kennaroads.buzz`
+**❓ Question 3: What is the root domain of the redirection URL found within the file?**
+
+**✅ Answer:** `kennaroads.buzz`
 
 ---
 
 ## Following the Redirect
+
+**💡 Hint:** Open the attachment in your VM web browser.
 
 Opening the redirect in an isolated VM browser landed on a spoofed login page.
 
@@ -78,13 +90,17 @@ _Landing page reached after following the redirect_
 ![Impersonated login page](/assets/img/thm-snapped_phishing_line-walkthrough/double-login.png)
 _Close-up of the branding used on the fake login page_
 
-**Impersonated company:** **Microsoft**
+**❓ Question 4: Which company is the login page impersonating?**
+
+**✅ Answer:** **Microsoft**
 
 This is the actual credential-harvesting step — any credentials entered here go straight to the attacker, not to Microsoft.
 
 ---
 
 ## Discovering the Exposed Phishing Kit
+
+**💡 Hint:** Let's check if the attacker left any files exposed on the same website. Navigate to the /data directory.
 
 Phishing kits are frequently deployed sloppily, and attackers often leave their kit's source files browsable on the same server hosting the fake login page. Navigating to `/data` on the phishing server returned a directory listing with the kit archive visible for download.
 
@@ -94,11 +110,15 @@ _Directory listing exposed at `/data`_
 ![Archive file found in the directory listing](/assets/img/thm-snapped_phishing_line-walkthrough/data-2.png)
 _Phishing kit archive sitting in the open directory_
 
-**Archive file name:** `Update365.zip`
+**❓ Question 5: What is the name of the archive file?**
+
+**✅ Answer:** `Update365.zip`
 
 ---
 
 ## Hashing and Checking the Kit on VirusTotal
+
+**💡 Hint:** Download the phishing kit archive to your virtual environment.
 
 The archive was downloaded to the analysis VM and hashed before any further handling — standard practice before touching any unknown file.
 
@@ -111,17 +131,26 @@ _Downloading `Update365.zip` to the VM_
 ![SHA256 hash of the archive](/assets/img/thm-snapped_phishing_line-walkthrough/hash.png)
 _`sha256sum` output for the downloaded archive_
 
-**SHA256:** `ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686`
+**❓ Question 6: Using the sha256sum command, what is the SHA256 hash of the file?**
+
+**✅ Answer:** `ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686`
+
+**💡 Hint:** Investigate the file hash from the previous question using VirusTotal.
 
 Submitting the hash to VirusTotal confirmed community detections and provided further context on the archive.
 
 ![VirusTotal detection results for the archive](/assets/img/thm-snapped_phishing_line-walkthrough/screencapture-virustotal-gui-file-ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686-details-2026-07-08-15_59_25.png)
 _VirusTotal detail page for the phishing kit hash_
 
-| Field | Value |
-|---|---|
-| Other threat category assigned (besides phishing) | `Trojan` |
-| Number of files in the archive | `49` |
+**❓ Question 7: Aside from phishing, what other threat category is assigned to the ZIP archive?**
+
+**✅ Answer:** `Trojan`
+
+**💡 Hint:** Review the VirusTotal Details page for the phishing kit.
+
+**❓ Question 8: How many files are contained within the archive?**
+
+**✅ Answer:** `49`
 
 Kits this size often bundle far more than a single fake login page — PHP mailers, config files, and sometimes leftover logs from previous victims, which is exactly what turned up next.
 
@@ -129,18 +158,24 @@ Kits this size often bundle far more than a single fake login page — PHP maile
 
 ## Uncovering Captured Credentials in the Log
 
+**💡 Hint:** Let's see if the attacker has exposed any captured credentials. Navigate to the /data/Update365/ directory and investigate the log file.
+
 Digging into `/data/Update365/` on the server surfaced a log file recording every set of credentials submitted to the fake login page.
 
 ![Log file showing captured credential submissions](/assets/img/thm-snapped_phishing_line-walkthrough/data-3.png)
 _Log entries showing submitted credentials, including a repeat submission_
 
-**User who submitted credentials more than once:** `michael.ascot@swiftspend.finance`
+**❓ Question 9: What is the email address of the user who submitted their credentials more than once?**
+
+**✅ Answer:** `michael.ascot@swiftspend.finance`
 
 A repeat submission like this is a common tell — the victim likely re-entered their credentials after the fake page failed to redirect properly, and is a strong indicator that this specific individual was compromised in the campaign.
 
 ---
 
 ## Tracing the Exfiltration Path (submit.php)
+
+**💡 Hint:** Extract the phishing kit archive and locate the submit.php file.
 
 Extracting the phishing kit archive and opening `submit.php` revealed how captured credentials actually leave the attacker's server.
 
@@ -155,7 +190,9 @@ _Extracted kit contents showing `submit.php`_
 ![submit.php source revealing the collection address](/assets/img/thm-snapped_phishing_line-walkthrough/send.png)
 _`submit.php` mailing captured credentials to the adversary_
 
-**Adversary's credential collection address:** `m3npat@yandex.com`
+**❓ Question 10: What email address is used by the adversary to collect compromised credentials?**
+
+**✅ Answer:** `m3npat@yandex.com`
 
 This confirms the full loop: victim enters credentials on the spoofed Microsoft page → `submit.php` on the attacker's server emails them directly to a Yandex mailbox.
 
@@ -164,6 +201,8 @@ This confirms the full loop: victim enters credentials on the spoofed Microsoft 
 ---
 
 ## Capturing and Decoding the Flag
+
+**💡 Hint:** Return to the phishing URL and locate the flag.txt file.
 
 The phishing URL also had a `flag.txt` file left exposed.
 
@@ -178,7 +217,9 @@ _Encoded flag value before decoding_
 ![Decoded flag in CyberChef](/assets/img/thm-snapped_phishing_line-walkthrough/secret-flag2.png)
 _Flag after decoding in CyberChef_
 
-**Secret value:** `THM{pL4y_w1Th_tH3_URL}`
+**❓ Question 11: Using CyberChef to decode the flag, what is the secret value?**
+
+**✅ Answer:** `THM{pL4y_w1Th_tH3_URL}`
 
 ---
 
