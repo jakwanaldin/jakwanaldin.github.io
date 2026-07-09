@@ -1,7 +1,7 @@
 ---
 title: "SOC Simulator: Triaging a Phishing Wave and Catching a Live Data Exfiltration"
 date: 2026-07-09 12:00:00 +0600
-categories: [Writeups, TryHackMe]
+categories: [TryHackMe, SOC]
 tags: [soc-simulator, tryhackme, siem, threat-hunting, incident-response, sysmon, dns-tunneling, dfir]
 ---
 
