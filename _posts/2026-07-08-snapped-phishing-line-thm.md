@@ -13,11 +13,18 @@ tags: [phishing, credential-harvesting, osint, virustotal, cyberchef, phishing-k
 **Difficulty:** Medium
 **Category:** SOC / Phishing Analysis / Phishing Kit Teardown
 
-Acting as a member of the IT department at **SwiftSpend Financial**, the task was to investigate a phishing incident reported by multiple employees — some of whom had already had their credentials compromised. The investigation starts with a batch of reported emails and ends with the attacker's own exposed infrastructure: a live phishing kit, a credential log, and the mailbox collecting stolen logins.
+Acting as a member of the IT department at **SwiftSpend Financial**, the task was to investigate a phishing incident reported by multiple employees — some of whom had already had their credentials harvested. The investigation included:
+
+1. Email review and pattern matching
+2. Malicious attachment inspection
+3. Phishing page reconnaissance
+4. Exposed phishing kit discovery and teardown
+5. Credential log analysis
+6. Adversary exfiltration path tracing
 
 This writeup follows the full chain — inbox, to malicious attachment, to spoofed login page, to the exposed phishing kit and exfiltration endpoint behind it.
 
-**Skills demonstrated:** email/header review, isolated-VM browsing, VirusTotal file/domain lookups, `sha256sum`, archive extraction, phishing-kit source review, log analysis, CyberChef decoding, IOC defanging.
+**Skills demonstrated:** email/header review, isolated-VM browsing, VirusTotal file/domain lookups, `sha256sum`, archive extraction, phishing-kit source review, log analysis, CyberChef decoding, incident-response indicators (IOCs).
 
 ---
 
@@ -79,7 +86,7 @@ This is the actual credential-harvesting step — any credentials entered here g
 
 ## Discovering the Exposed Phishing Kit
 
-Phishing kits are frequently deployed sloppily, and attackers often leave their kit's source files browsable on the same server hosting the fake login page. Navigating to `/data` on the phishing site confirmed exactly that.
+Phishing kits are frequently deployed sloppily, and attackers often leave their kit's source files browsable on the same server hosting the fake login page. Navigating to `/data` on the phishing server returned a directory listing with the kit archive visible for download.
 
 ![Browsing the exposed /data directory](/assets/img/thm-snapped_phishing_line-walkthrough/data-1.png)
 _Directory listing exposed at `/data`_
@@ -108,7 +115,7 @@ _`sha256sum` output for the downloaded archive_
 
 Submitting the hash to VirusTotal confirmed community detections and provided further context on the archive.
 
-![VirusTotal detection results for the archive](/assets/img/thm-snapped_phishing_line-walkthrough/screencapture-virustotal-gui-file-ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686.png)
+![VirusTotal detection results for the archive](/assets/img/thm-snapped_phishing_line-walkthrough/screencapture-virustotal-gui-file-ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686-details-2026-07-08-15_59_25.png)
 _VirusTotal detail page for the phishing kit hash_
 
 | Field | Value |
@@ -129,7 +136,7 @@ _Log entries showing submitted credentials, including a repeat submission_
 
 **User who submitted credentials more than once:** `michael.ascot@swiftspend.finance`
 
-A repeat submission like this is a common tell — the victim likely re-entered their credentials after the fake page failed to redirect properly, and is a strong indicator that this specific individual was actually caught by the campaign and needs immediate remediation (forced password reset, account review).
+A repeat submission like this is a common tell — the victim likely re-entered their credentials after the fake page failed to redirect properly, and is a strong indicator that this specific individual was compromised in the campaign.
 
 ---
 
@@ -213,11 +220,11 @@ _Flag after decoding in CyberChef_
 
 ## Key Takeaways
 
-- **Follow the chain, not just the first hop.** Confirming an email is phishing is only step one — tracing it through the redirect, the fake login page, and the kit behind it turns a single IOC into a full picture of the campaign.
-- **Attackers get sloppy with their own infrastructure.** An open `/data` directory handed over the entire kit, a victim credential log, and the exfiltration script — none of which should have been browsable.
-- **Repeat submissions are a victim signal, not just a data point.** Finding `michael.ascot@swiftspend.finance` in the log turns this from an abstract campaign into an actionable incident with a real person who needs a password reset.
-- **Kit source code is often the fastest path to the adversary's endpoint.** Reading `submit.php` directly gave the exfiltration address — far faster than trying to infer it from network traffic alone.
-- **Always defang IOCs before sharing.** Domains, the archive hash, and the collection email address should all be defanged before going into a ticket or report to avoid accidental clicks or auto-parsing.
+- **Follow the chain, not just the first hop.** Confirming an email is phishing is only step one — tracing it through the redirect, the fake login page, and the kit behind it turns a single IOC into a full incident narrative.
+- **Attackers get sloppy with their own infrastructure.** An open `/data` directory handed over the entire kit, a victim credential log, and the exfiltration script — none of which should have been exposed.
+- **Repeat submissions are a victim signal, not just a data point.** Finding `michael.ascot@swiftspend.finance` in the log turns this from an abstract campaign into an actionable incident with a named target.
+- **Kit source code is often the fastest path to the adversary's endpoint.** Reading `submit.php` directly gave the exfiltration address — far faster than trying to infer it from network traffic.
+- **Always defang IOCs before sharing.** Domains, the archive hash, and the collection email address should all be defanged before going into a ticket or report to avoid accidental clicks or auto-sandboxing.
 
 ---
 
