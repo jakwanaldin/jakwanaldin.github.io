@@ -1,7 +1,7 @@
 ---
 title: "TryHackMe SOC Simulator: Phishing Unfolding"
 date: 2026-07-09 12:00:00 +0600
-categories: [Writeups, TryHackMe]
+categories: [TryHackMe, SOC]
 tags: [soc-simulator, tryhackme, siem, threat-hunting, incident-response, sysmon, dns-tunneling, dfir]
 image:
   path: /assets/img/thm-soc-sim-phishing/00-phishing-unfolding-cover.png
