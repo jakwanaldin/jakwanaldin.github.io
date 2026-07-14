@@ -1,6 +1,6 @@
 ---
 title: "VAPT Training: CSRF & XSS — PortSwigger Web Security Academy Labs"
-date: 2026-04-19 09:00:00 +0600
+date: 2025-04-19 09:00:00 +0600
 categories: [VAPT, Web Application Security]
 tags: [csrf, xss, portswigger, owasp, penetration-testing, arena-web-security]
 ---
