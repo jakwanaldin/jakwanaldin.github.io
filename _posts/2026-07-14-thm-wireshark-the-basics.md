@@ -51,11 +51,16 @@ Packet 38 was used to walk through Wireshark's layer-by-layer breakdown of an HT
 | TCP payload size | 424 bytes |
 | ETag | `9a01a-4696-7e354b00` |
 
-![Markup language in HTTP body](/assets/img/thm-Wireshark-The-Basics-room-info/markup.png)
-![Arrival date](/assets/img/thm-Wireshark-The-Basics-room-info/date.png)
-![TTL value](/assets/img/thm-Wireshark-The-Basics-room-info/TTL.png)
-![TCP payload size](/assets/img/thm-Wireshark-The-Basics-room-info/payload.png)
-![ETag value](/assets/img/thm-Wireshark-The-Basics-room-info/eTag.png)
+- **Markup language in the HTTP body:** `eXtensible Markup Language`
+  ![Markup language in HTTP body](/assets/img/thm-Wireshark-The-Basics-room-info/markup.png)
+- **Arrival date:** `05/13/2004`
+  ![Arrival date](/assets/img/thm-Wireshark-The-Basics-room-info/date.png)
+- **Time To Live (TTL):** `47`
+  ![TTL value](/assets/img/thm-Wireshark-The-Basics-room-info/TTL.png)
+- **TCP payload size:** `424 bytes`
+  ![TCP payload size](/assets/img/thm-Wireshark-The-Basics-room-info/payload.png)
+- **ETag:** `9a01a-4696-7e354b00`
+  ![ETag value](/assets/img/thm-Wireshark-The-Basics-room-info/eTag.png)
 
 Each of these came from expanding a different layer in the packet details pane — Frame (arrival time), IP (TTL), TCP (payload size), and HTTP (ETag) — reinforcing how a single packet carries independently inspectable data at every layer of the stack.
 
@@ -82,11 +87,11 @@ Using **Ctrl+F** (Find Packet) with a "Packet details" / String search:
 Using **File → Export Objects → HTTP**, a `.txt` file embedded in the traffic was located and read as ASCII art — revealing the hidden name **`PACKETMASTER`**.
 
 ![Searching for the .txt file](/assets/img/thm-Wireshark-The-Basics-room-info/search-.txt.png)
-![Locating note.txt](/assets/img/thm-Wireshark-The-Basics-room-info/search-note-txt.png)
-![Clicking the line-based text data field](/assets/img/thm-Wireshark-The-Basics-room-info/click-line-based-text.png)
-![Scrolling to the reassembled HTTP response](/assets/img/thm-Wireshark-The-Basics-room-info/scroll-down-and-double-click-response.png)
-![ASCII art answer — PACKETMASTER](/assets/img/thm-Wireshark-The-Basics-room-info/txt-answer.png)
 ![Full text result](/assets/img/thm-Wireshark-The-Basics-room-info/txt-result.png)
+![Locating note.txt](/assets/img/thm-Wireshark-The-Basics-room-info/search-note-txt.png)
+![Scrolling to the reassembled HTTP response](/assets/img/thm-Wireshark-The-Basics-room-info/scroll-down-and-double-click-response.png)
+![Clicking the line-based text data field](/assets/img/thm-Wireshark-The-Basics-room-info/click-line-based-text.png)
+![ASCII art answer — PACKETMASTER](/assets/img/thm-Wireshark-The-Basics-room-info/txt-answer.png)
 
 Checking **Analyze → Expert Information** surfaced protocol-level anomalies, most notably **1636 warnings** (illegal characters in HTTP header names).
 
@@ -107,7 +112,6 @@ Packet **39765** contained a JPEG hidden inside HTTP traffic. Rather than using 
 ![Creating the new JPEG file](/assets/img/thm-Wireshark-The-Basics-room-info/create-new-jpeg-file.png)
 ![Export packet bytes dialog — step 1](/assets/img/thm-Wireshark-The-Basics-room-info/export-1.png)
 ![Export packet bytes dialog — step 2](/assets/img/thm-Wireshark-The-Basics-room-info/export-2.png)
-![Naming the exported file](/assets/img/thm-Wireshark-The-Basics-room-info/name.png)
 ![Saving to the export path](/assets/img/thm-Wireshark-The-Basics-room-info/export-to.png)
 
 3. Saved the extracted data as `Export.jpeg` to the Desktop
@@ -136,15 +140,17 @@ Filtering was applied both by right-click and by typing queries directly into th
 
 ![Displayed packet count with http filter](/assets/img/thm-Wireshark-The-Basics-room-info/displayed.png)
 
-- Right-clicking the `User-Agent` field and applying it as a filter produced `http.user_agent`
+- Right-clicking the `Follow TCP/HTTP Stream`
 
-![Applying User-Agent as a filter](/assets/img/thm-Wireshark-The-Basics-room-info/Screenshot 2026-07-14 155629.png)
+![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/follow-1.png)
+
+- Sreach `artist` and you can find number of artists which is `artist=3`
+  ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/number-of-artist.png)
+- Find the name of 2nd artist `artist=2`
+  ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/2nd-artist.png)
 
 This is the fastest way to narrow 58,620 packets down to a relevant subset without hand-writing filter syntax — useful during time-pressured triage.
 
-**Bonus — Follow Stream:** while not required to answer the room's questions, Follow TCP/HTTP Stream is worth calling out separately, since it reconstructs the raw application-level conversation (client requests in red, server responses in blue) in one view.
-
-![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/follow-1.png)
 
 ---
 
