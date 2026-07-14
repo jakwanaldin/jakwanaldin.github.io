@@ -1,6 +1,6 @@
 ---
 title: "VAPT Case Study: Local File Inclusion (LFI) — Multiple Targets"
-date: 2026-04-15 09:00:00 +0600
+date: 2025-04-15 09:00:00 +0600
 categories: [VAPT, Web Application Security]
 tags: [lfi, web-security, owasp, penetration-testing, arena-web-security]
 ---
