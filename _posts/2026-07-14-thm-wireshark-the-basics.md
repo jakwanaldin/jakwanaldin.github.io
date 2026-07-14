@@ -7,6 +7,7 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip]
 
 ## Overview
 ![Room overview](/assets/img/thm-Wireshark-The-Basics-room-info/1773339068622-wiresharkthebasics.png)
+
 **Room:** [Wireshark: The Basics](https://tryhackme.com/room/wiresharkthebasics)
 
 **Module:** Network Traffic Analysis
