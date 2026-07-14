@@ -209,7 +209,8 @@ This is the fastest way to narrow 58,620 packets down to a relevant subset witho
 | 12 | Expert Info warning count | 1636 |
 | 13 | Filter query from packet 4 (HTTP) | `http` |
 | 14 | Displayed packets with `http` filter | 1089 |
-| 15 | Filter query for User-Agent field | `http.user_agent` |
+| 15 | Total number of artists | `3` |
+| 16 | Name of the second artist | `Blad3` |
 
 ---
 
@@ -230,7 +231,7 @@ Inspect packet 38 layer-by-layer
 Ctrl+F string search ("r4w") → artist name
         │
         ▼
-File → Export Objects → HTTP → hidden .txt (ASCII art name)
+File → Search .txt → note.txt → hidden .txt (ASCII art name)
         │
         ▼
 Packet 39765 → right-click JPEG layer → Export Packet Bytes
@@ -243,6 +244,9 @@ Analyze → Expert Information → warning count
         │
         ▼
 Right-click HTTP → Apply as Filter → narrow 58,620 → 1089 packets
+        │
+        ▼
+Search aritst → Total number of Artists, Name of Second Artist
 ```
 
 ---
