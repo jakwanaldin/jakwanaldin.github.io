@@ -76,8 +76,6 @@ Using **Ctrl+F** (Find Packet) with a "Packet details" / String search:
 - Searching `r4w` located the artist name string → **`r4w8173`**
 
 ![Artist 1 field](/assets/img/thm-Wireshark-The-Basics-room-info/artist-1.png)
-![Number of artist entries](/assets/img/thm-Wireshark-The-Basics-room-info/number-of-artist.png)
-![Second artist entry](/assets/img/thm-Wireshark-The-Basics-room-info/2nd-artist.png)
 
 - Jumping to **packet 12** and reading the packet comment gave a decoy string (`This_is_Not_a_Flag`), which was a deliberate red herring in the room
 
@@ -145,6 +143,7 @@ Filtering was applied both by right-click and by typing queries directly into th
 ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/follow-1.png)
 
 - Sreach `artist` and you can find number of artists which is `artist=3`
+  ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/Screenshot-2026-07-14-155629.png)
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/number-of-artist.png)
 - Find the name of 2nd artist `artist=2`
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/2nd-artist.png)
