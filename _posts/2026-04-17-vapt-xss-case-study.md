@@ -1,6 +1,6 @@
 ---
 title: "VAPT Case Study: Reflected & DOM-Based Cross-Site Scripting (XSS)"
-date: 2026-04-17 09:00:00 +0600
+date: 2025-04-17 09:00:00 +0600
 categories: [VAPT, Web Application Security]
 tags: [xss, dom-xss, owasp, penetration-testing, arena-web-security]
 ---
