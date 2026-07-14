@@ -1,47 +1,145 @@
 ---
-# the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
 ---
 
-## Hi, I'm Jakwan Aldin
+## About Me
 
-I'm a Security Analyst based in Dhaka, Bangladesh, with a background in web application penetration testing and DFIR.
+I'm a Security Analyst from Dhaka, Bangladesh with experience in web application penetration testing, DFIR, and product analysis.
 
----
+My cybersecurity journey started with learning web technologies before moving into offensive security, where I performed vulnerability assessments and penetration testing on real-world applications. More recently, I've been expanding into SOC operations, SIEM engineering, threat detection, and incident response.
 
-## Experience
+Alongside cybersecurity, I've worked as an Executive Business Analyst, which gives me a somewhat unusual perspective on how secure products actually get designed, built, and maintained — not just how they get broken.
 
-**Executive Business Analyst — US-Bangla Airlines** *(2025 – 2026)*  
-Worked in the Product Department on business requirements, feature mapping, and process analysis across airline operations.
-
-**Security Analyst (VAPT) — Arena Web Security**  
-Conducted 20+ web application penetration tests, identifying 80+ vulnerabilities across client environments. Findings documented with CVSS scoring covering LFI, XSS, CSRF, SQL injection, web shell deployment, and LFI-to-RCE chains.
+I enjoy documenting what I learn through technical writeups, not just to record commands, but to explain the reasoning behind each step — the *why*, not just the *what*.
 
 ---
 
-## Technical Skills
+## My Journey
 
-- **Penetration Testing:** Burp Suite, Metasploit, Nmap, Acunetix, Wireshark, Kali Linux
-- **Frameworks:** OWASP Top 10, CVSS scoring, MITRE ATT&CK
-- **SIEM & DFIR:** Splunk SPL, Windows Event Log analysis, Sysmon, PowerShell log forensics
-- **Scripting:** Python, Bash
-- **Certifications:** Google Cybersecurity Professional Certificate, CompTIA Security+ (in progress)
+```
+Computer Science Student
+        ↓
+Frontend & Web Development
+        ↓
+Web Application Security
+        ↓
+VAPT Projects (Arena Web Security)
+        ↓
+Business Analysis (US-Bangla Airlines)
+        ↓
+SOC & DFIR
+        ↓
+Future: Security Architecture & AI Security
+```
+
+Each stage fed into the next. Business analysis taught me how products actually get built and where security gets deprioritized under deadline pressure. VAPT taught me how attackers think. SOC and DFIR are where I'm connecting both — understanding not just how systems break, but how to watch for it happening in real time.
 
 ---
 
-## Education
+## Areas of Interest
 
-**BSc Computer Science & Engineering — Ahsanullah University of Science and Technology (AUST)**  
-CGPA: 3.225/4.00 | IELTS: 7.5
+- Offensive Security
+- Web Application Security
+- Threat Hunting
+- Digital Forensics & Incident Response (DFIR)
+- Purple Teaming
+- Secure Software Development
+- AI Security
+- Cloud Security
 
 ---
 
-## This Blog
+## Learning Philosophy
 
-This site is where I document TryHackMe and HackTheBox walkthroughs, VAPT research, and notes from my journey through the cybersecurity space. The goal is to write the kind of technical writeups that actually explain the *why* behind each step, not just the commands.
+I believe cybersecurity is best learned by building, breaking, and documenting systems.
 
-My long-term goal is to see myself in a cybersecurity leadership role focused on critical infrastructure and build AI driven solution to help everyone. 
+That's why this blog focuses on practical walkthroughs, real lab exercises, and technical explanations — not just commands copy-pasted from a terminal history.
+
+---
+
+## Current Goals (2026)
+
+- ✔ Transition into SOC Engineering
+- ✔ Master Splunk & Microsoft Sentinel
+- ✔ Obtain CompTIA Security+
+- ✔ Complete Blue Team Labs
+- ✔ Learn Malware Analysis
+- ✔ Build open-source security tools
+- ✔ Publish 100 technical writeups
+- ✔ Pursue an MSc in Cybersecurity
+
+---
+
+## What You'll Find on This Blog
+
+**TryHackMe**  
+Walkthroughs with explanations, not just answers.
+
+**Hack The Box**  
+Enumeration and exploitation notes.
+
+**DFIR**  
+Incident investigations and log analysis.
+
+**Detection Engineering**  
+Sigma rules, Splunk SPL, detection use cases.
+
+**Research**  
+OWASP, Active Directory, Linux, and Windows internals.
+
+**Tools**  
+Scripts and utilities I've built along the way.
+
+---
+
+## Homelab
+
+- Windows Server
+- Active Directory
+- Kali Linux
+- Ubuntu
+- Elastic Stack
+- Splunk
+- Sysmon
+- VirtualBox / VMware
+- Security Onion *(planned)*
+
+---
+
+## Current Tech Stack
+
+**Languages**  
+Python · JavaScript · Bash · SQL
+
+**Operating Systems**  
+Windows · Linux
+
+**Security Tools**  
+Burp Suite · Metasploit · Nmap · Acunetix · Wireshark
+
+**SIEM**  
+Splunk · Elastic
+
+**Cloud**  
+Learning Azure · Learning AWS
+
+---
+
+## Beyond Cybersecurity
+
+Outside of work, I spend time reading security research, tinkering with side projects, and thinking about product design — a habit left over from my business analyst days. Always up for a good cup of coffee and a conversation about where this industry is headed.
+
+---
+
+## My Roadmap
+
+```
+2026 → Security+, Splunk, SOC, DFIR
+2027 → CEH, Cloud Security, Azure
+2028 → CISSP, Security Architect, Leadership
+Long term → AI-driven Security Solutions, Critical Infrastructure Security
+```
 
 ---
 
