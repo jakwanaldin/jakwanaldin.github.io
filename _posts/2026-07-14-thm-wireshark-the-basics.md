@@ -101,30 +101,6 @@ Using **Ctrl+F** (Find Packet) with a "Packet details" / String search:
 
 ![Hint on packet comments](/assets/img/thm-Wireshark-The-Basics-room-info/hint-1.png)
 
-Using **File → Export Objects → HTTP**, a `.txt` file embedded in the traffic was located and read as ASCII art — revealing the hidden name **`PACKETMASTER`**.
-
-![Searching for the .txt file](/assets/img/thm-Wireshark-The-Basics-room-info/search-.txt.png)
-
-![Full text result](/assets/img/thm-Wireshark-The-Basics-room-info/txt-result.png)
-
-![Locating note.txt](/assets/img/thm-Wireshark-The-Basics-room-info/search-note-txt.png)
-
-![Scrolling to the reassembled HTTP response](/assets/img/thm-Wireshark-The-Basics-room-info/scroll-down-and-double-click-response.png)
-
-![Clicking the line-based text data field](/assets/img/thm-Wireshark-The-Basics-room-info/click-line-based-text.png)
-
-![ASCII art answer — PACKETMASTER](/assets/img/thm-Wireshark-The-Basics-room-info/txt-answer.png)
-
-Checking **Analyze → Expert Information** surfaced protocol-level anomalies, most notably **1636 warnings** (illegal characters in HTTP header names).
-
-![Expert Information — errors](/assets/img/thm-Wireshark-The-Basics-room-info/error.png)
-
-![Expert Information — warning count](/assets/img/thm-Wireshark-The-Basics-room-info/no-of-error.png)
-
----
-
-## Step 4 — Extracting an Embedded File
-
 Packet **39765** contained a JPEG hidden inside HTTP traffic. Rather than using Export Objects, this one was pulled manually to demonstrate the alternate method:
 
 ![Packet 39765 — JPEG layer](/assets/img/thm-Wireshark-The-Basics-room-info/packet-39765.png)
@@ -153,9 +129,39 @@ md5sum Export.jpeg
 
 This matched the answer expected for the packet-12 comment question — a nice reminder that TryHackMe sometimes chains a "read the comment" step to a completely separate technical task (extract-and-hash) elsewhere in the capture.
 
+Using **Search → Filter → .txt**, step by step — revealing the hidden name **`PACKETMASTER`**.
+
+![Searching for the .txt file](/assets/img/thm-Wireshark-The-Basics-room-info/search-.txt.png)
+
+- Result of `.txt` search
+  
+![Full text result](/assets/img/thm-Wireshark-The-Basics-room-info/txt-result.png)
+
+- Now search `note.txt`
+  
+![Locating note.txt](/assets/img/thm-Wireshark-The-Basics-room-info/search-note-txt.png)
+
+- Scroll down and double click on `response in frame`
+  
+![Scrolling to the reassembled HTTP response](/assets/img/thm-Wireshark-The-Basics-room-info/scroll-down-and-double-click-response.png)
+
+- Click on `Line Based Text`
+  
+![Clicking the line-based text data field](/assets/img/thm-Wireshark-The-Basics-room-info/click-line-based-text.png)
+
+- Alien's Name: `PACKETMASTER`
+  
+![ASCII art answer — PACKETMASTER](/assets/img/thm-Wireshark-The-Basics-room-info/txt-answer.png)
+
+Checking **Analyze → Expert Information** surfaced protocol-level anomalies, most notably **1636 warnings** (illegal characters in HTTP header names).
+
+![Expert Information — errors](/assets/img/thm-Wireshark-The-Basics-room-info/error.png)
+
+![Expert Information — warning count](/assets/img/thm-Wireshark-The-Basics-room-info/no-of-error.png)
+
 ---
 
-## Step 5 — Packet Filtering
+## Step 4 — Packet Filtering
 
 Filtering was applied both by right-click and by typing queries directly into the display filter bar.
 
