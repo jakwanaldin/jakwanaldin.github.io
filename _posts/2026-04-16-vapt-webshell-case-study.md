@@ -1,6 +1,6 @@
 ---
 title: "VAPT Case Study: Unrestricted File Upload → Web Shell Deployment"
-date: 2026-04-16 09:00:00 +0600
+date: 2025-04-16 09:00:00 +0600
 categories: [VAPT, Web Application Security]
 tags: [file-upload, webshell, rce, owasp, penetration-testing, arena-web-security]
 ---
