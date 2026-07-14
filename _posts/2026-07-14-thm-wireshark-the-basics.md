@@ -53,12 +53,16 @@ Packet 38 was used to walk through Wireshark's layer-by-layer breakdown of an HT
 
 - **Markup language in the HTTP body:** `eXtensible Markup Language`
   ![Markup language in HTTP body](/assets/img/thm-Wireshark-The-Basics-room-info/markup.png)
+  
 - **Arrival date:** `05/13/2004`
   ![Arrival date](/assets/img/thm-Wireshark-The-Basics-room-info/date.png)
+  
 - **Time To Live (TTL):** `47`
   ![TTL value](/assets/img/thm-Wireshark-The-Basics-room-info/TTL.png)
+  
 - **TCP payload size:** `424 bytes`
   ![TCP payload size](/assets/img/thm-Wireshark-The-Basics-room-info/payload.png)
+  
 - **ETag:** `9a01a-4696-7e354b00`
   ![ETag value](/assets/img/thm-Wireshark-The-Basics-room-info/eTag.png)
 
@@ -71,6 +75,7 @@ Each of these came from expanding a different layer in the packet details pane �
 Using **Ctrl+F** (Find Packet) with a "Packet details" / String search:
 
 ![Searching for r4w string](/assets/img/thm-Wireshark-The-Basics-room-info/r4w-search.png)
+
 ![r4w match highlighted](/assets/img/thm-Wireshark-The-Basics-room-info/r4w-1.png)
 
 - Searching `r4w` located the artist name string → **`r4w8173`**
@@ -80,20 +85,27 @@ Using **Ctrl+F** (Find Packet) with a "Packet details" / String search:
 - Jumping to **packet 12** and reading the packet comment gave a decoy string (`This_is_Not_a_Flag`), which was a deliberate red herring in the room
 
 ![Packet 12 comment](/assets/img/thm-Wireshark-The-Basics-room-info/packet-12.png)
+
 ![Hint on packet comments](/assets/img/thm-Wireshark-The-Basics-room-info/hint-1.png)
 
 Using **File → Export Objects → HTTP**, a `.txt` file embedded in the traffic was located and read as ASCII art — revealing the hidden name **`PACKETMASTER`**.
 
 ![Searching for the .txt file](/assets/img/thm-Wireshark-The-Basics-room-info/search-.txt.png)
+
 ![Full text result](/assets/img/thm-Wireshark-The-Basics-room-info/txt-result.png)
+
 ![Locating note.txt](/assets/img/thm-Wireshark-The-Basics-room-info/search-note-txt.png)
+
 ![Scrolling to the reassembled HTTP response](/assets/img/thm-Wireshark-The-Basics-room-info/scroll-down-and-double-click-response.png)
+
 ![Clicking the line-based text data field](/assets/img/thm-Wireshark-The-Basics-room-info/click-line-based-text.png)
+
 ![ASCII art answer — PACKETMASTER](/assets/img/thm-Wireshark-The-Basics-room-info/txt-answer.png)
 
 Checking **Analyze → Expert Information** surfaced protocol-level anomalies, most notably **1636 warnings** (illegal characters in HTTP header names).
 
 ![Expert Information — errors](/assets/img/thm-Wireshark-The-Basics-room-info/error.png)
+
 ![Expert Information — warning count](/assets/img/thm-Wireshark-The-Basics-room-info/no-of-error.png)
 
 ---
@@ -108,8 +120,11 @@ Packet **39765** contained a JPEG hidden inside HTTP traffic. Rather than using 
 2. Right-clicked the **JPEG File Interchange Format** layer → **Export Packet Bytes**
 
 ![Creating the new JPEG file](/assets/img/thm-Wireshark-The-Basics-room-info/create-new-jpeg-file.png)
+
 ![Export packet bytes dialog — step 1](/assets/img/thm-Wireshark-The-Basics-room-info/export-1.png)
+
 ![Export packet bytes dialog — step 2](/assets/img/thm-Wireshark-The-Basics-room-info/export-2.png)
+
 ![Saving to the export path](/assets/img/thm-Wireshark-The-Basics-room-info/export-to.png)
 
 3. Saved the extracted data as `Export.jpeg` to the Desktop
@@ -143,8 +158,9 @@ Filtering was applied both by right-click and by typing queries directly into th
 ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/follow-1.png)
 
 - Sreach `artist` and you can find number of artists which is `artist=3`
-  ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/Screenshot-2026-07-14-155629.png)
+  ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/search-result.png)
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/number-of-artist.png)
+  
 - Find the name of 2nd artist `artist=2`
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/2nd-artist.png)
 
