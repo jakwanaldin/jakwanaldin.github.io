@@ -1,6 +1,6 @@
 ---
 title: "VAPT Case Study: Manual Union-Based SQL Injection"
-date: 2026-04-18 09:00:00 +0600
+date: 2025-04-18 09:00:00 +0600
 categories: [VAPT, Web Application Security]
 tags: [sql-injection, union-based, owasp, penetration-testing, arena-web-security]
 ---
