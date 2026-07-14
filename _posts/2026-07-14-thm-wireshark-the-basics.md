@@ -6,14 +6,16 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip]
 ---
 
 ## Overview
-
-**Room:** [Wireshark: The Basics](https://tryhackme.com/room/wiresharkthebasics)
-**Module:** Network Traffic Analysis
-**Objective:** Get familiar with Wireshark's core interface and workflow — loading captures, dissecting packets across OSI layers, navigating and searching large capture files, exporting embedded objects, and applying basic display filters.
-**Tools used:** Wireshark, Linux terminal (`md5sum`)
-**Capture files provided:** `http1.pcapng` (used only to mirror the room's example screenshots), `Exercise.pcapng` (used to answer every question)
-
 ![Room overview](/assets/img/thm-Wireshark-The-Basics-room-info/1773339068622-wiresharkthebasics.png)
+**Room:** [Wireshark: The Basics](https://tryhackme.com/room/wiresharkthebasics)
+
+**Module:** Network Traffic Analysis
+
+**Objective:** Get familiar with Wireshark's core interface and workflow — loading captures, dissecting packets across OSI layers, navigating and searching large capture files, exporting embedded objects, and applying basic display filters.
+
+**Tools used:** Wireshark, Linux terminal (`md5sum`)
+
+**Capture files provided:** `http1.pcapng` (used only to mirror the room's example screenshots), `Exercise.pcapng` (used to answer every question)
 
 This room is a foundations room rather than a vulnerability walkthrough, so the "attack chain" here is really an **analysis chain** — the sequence of Wireshark features used to move from a raw capture file to specific extracted artifacts (hashes, hidden text, an embedded image, and filtered traffic).
 
@@ -27,10 +29,15 @@ Before touching individual packets, the capture file's metadata was reviewed via
 ![Statistics menu](/assets/img/thm-Wireshark-The-Basics-room-info/click-on-statistics.png)
 
 - **Capture file comment:** `TryHackMe_Wireshark_Demo`
+  
   ![Capture file comment / flag](/assets/img/thm-Wireshark-The-Basics-room-info/flag-1.png)
+  
 - **Total packets captured:** `58620`
+  
   ![Total packet count](/assets/img/thm-Wireshark-The-Basics-room-info/no-of-packets.png)
+  
 - **SHA256 hash of the capture file:** `f446de335565fb0b0ee5e5a3266703c778b2f3dfad7efeaeccb2da5641a6d6eb`
+  
   ![SHA256 hash](/assets/img/thm-Wireshark-The-Basics-room-info/1-sha256-hash.png)
 
 This is a habit worth carrying into real investigations — always record the file's hash and total packet count before analysis, both for chain-of-custody and to sanity-check filtered results later.
@@ -52,18 +59,23 @@ Packet 38 was used to walk through Wireshark's layer-by-layer breakdown of an HT
 | ETag | `9a01a-4696-7e354b00` |
 
 - **Markup language in the HTTP body:** `eXtensible Markup Language`
+  
   ![Markup language in HTTP body](/assets/img/thm-Wireshark-The-Basics-room-info/markup.png)
   
 - **Arrival date:** `05/13/2004`
+  
   ![Arrival date](/assets/img/thm-Wireshark-The-Basics-room-info/date.png)
   
 - **Time To Live (TTL):** `47`
+  
   ![TTL value](/assets/img/thm-Wireshark-The-Basics-room-info/TTL.png)
   
 - **TCP payload size:** `424 bytes`
+  
   ![TCP payload size](/assets/img/thm-Wireshark-The-Basics-room-info/payload.png)
   
 - **ETag:** `9a01a-4696-7e354b00`
+  
   ![ETag value](/assets/img/thm-Wireshark-The-Basics-room-info/eTag.png)
 
 Each of these came from expanding a different layer in the packet details pane — Frame (arrival time), IP (TTL), TCP (payload size), and HTTP (ETag) — reinforcing how a single packet carries independently inspectable data at every layer of the stack.
@@ -158,14 +170,17 @@ Filtering was applied both by right-click and by typing queries directly into th
 ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/follow-1.png)
 
 - Sreach `artist` and you can find number of artists which is `artist=3`
+  
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/search-result.png)
+  
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/number-of-artist.png)
+
   
 - Find the name of 2nd artist `artist=2`
+  
   ![Follow stream feature](/assets/img/thm-Wireshark-The-Basics-room-info/2nd-artist.png)
 
 This is the fastest way to narrow 58,620 packets down to a relevant subset without hand-writing filter syntax — useful during time-pressured triage.
-
 
 ---
 
