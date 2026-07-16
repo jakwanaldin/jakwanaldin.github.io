@@ -107,7 +107,7 @@ With a feel for the traffic from Statistics, the next set of questions were answ
 
 - Typed `dns.a` for the number of type A DNS queries.
 
-  ![Filter: dns.a — type A DNS queries](/assets/img/thm-Wireshark-packet-operations/click-filter-1.png)
+  ![Existing A DNS queries](assets/img/thm-Wireshark-packet-operations/dns-a.png)
 
   **Answer:** `51`
 
@@ -148,7 +148,11 @@ The final set of questions used Wireshark's advanced filter operators (`contains
   **Answer:** `34185`
 
 - Used an existing saved **filter button** (pre-built for GIF/JPEG traffic with an HTTP 200 response) to filter with a single click and read the displayed packet count.
+  - Click here
 
+  ![Filter: dns.a — type A DNS queries](/assets/img/thm-Wireshark-packet-operations/click-filter-1.png)
+
+  
   ![Existing filter button — displayed packet count](/assets/img/thm-Wireshark-packet-operations/click-filter-2.png)
 
   **Answer:** `261`
