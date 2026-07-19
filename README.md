@@ -1,77 +1,162 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+---
+icon: fas fa-info-circle
+order: 4
+---
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+## About Me
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+I'm a Security Analyst from Dhaka, Bangladesh with experience in web application penetration testing, DFIR, and product analysis.
 
-  [![CI][badge-ci]][ci]&nbsp;
-  [![Codacy Badge][badge-codacy]][codacy]&nbsp;
-  [![GitHub license][badge-license]][license]&nbsp;
-  [![Gem Version][badge-gem]][gem]&nbsp;
-  [![Open in Dev Containers][badge-open-container]][open-container]
+My cybersecurity journey started with learning web technologies before moving into offensive security, where I performed vulnerability assessments and penetration testing on real-world applications. More recently, I've been expanding into SOC operations, SIEM engineering, threat detection, and incident response.
 
-  [**Live Demo** →][demo]
+Alongside cybersecurity, I've worked as an Executive Business Analyst, which gives me a somewhat unusual perspective on how secure products actually get designed, built, and maintained — not just how they get broken.
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+I enjoy documenting what I learn through technical writeups, not just to record commands, but to explain the reasoning behind each step — the *why*, not just the *what*.
 
-</div>
+---
 
-## Features
+## My Journey
 
-- **Design & UX** - Responsive layout, Dark/Light modes, Localized UI language,
-  and Dark mode images.
-- **Content Management** - Pinned posts, Hierarchical categories, Trending tags,
-  Auto-generated Table of Contents, and Last modified dates.
-- **Rich Text Support** - Syntax highlighting, Mathematical expressions, Mermaid
-  diagrams & flowcharts, and Embedded media.
-- **Interactivity & Outreach** - Built-in search, Multiple comment systems, and
-  Atom feeds.
-- **System & Optimization** - PWA support, integrated Web analytics, and
-  advanced SEO performance.
+```
+Computer Science Student
+        ↓
+Frontend & Web Development
+        ↓
+Web Application Security
+        ↓
+VAPT Projects (Arena Web Security)
+        ↓
+Business Analysis (US-Bangla Airlines)
+        ↓
+SOC & DFIR
+        ↓
+Future: Security Architecture & AI Security
+```
 
-## Documentation
+Each stage fed into the next. Business analysis taught me how products actually get built and where security gets deprioritized under deadline pressure. VAPT taught me how attackers think. SOC and DFIR are where I'm connecting both — understanding not just how systems break, but how to watch for it happening in real time.
 
-To learn how to use, develop, and upgrade the project, please refer to the
-[Wiki][wiki].
+---
 
-## Contributing
+## Areas of Interest
 
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the
-open-source community such an amazing place to learn, inspire, and create. Any
-contributions you make are greatly appreciated.
-For details, please refer to our [Contributing Guidelines][contribute-guide].
+- Offensive Security
+- Web Application Security
+- Threat Hunting
+- Digital Forensics & Incident Response (DFIR)
+- Purple Teaming
+- Secure Software Development
+- AI Security
+- Cloud Security
 
-## Credits
+---
 
-This project is built on the [Jekyll][jekyllrb] ecosystem and integrates a
-collection of [excellent libraries][lib]. Its avatar and favicon are sourced
-from [ClipartMAX][clipartmax].
+## Learning Philosophy
 
-Furthermore, thanks to everyone who contributed to the development of this project!
+I believe cybersecurity is best learned by building, breaking, and documenting systems.
 
-[![all-contributors][contributors-avatar]][contributors]
+That's why this blog focuses on practical walkthroughs, real lab exercises, and technical explanations — not just commands copy-pasted from a terminal history.
 
-## License
+---
+## Career Aptitude
 
-This project is licensed under the [MIT License][license].
+> **TryHackMe Career Quiz Result: Red Teamer** 🎯
+>
+> Red teamers emulate real-world adversaries — attacking, retaining access, and evading detection to test an organization's detection and response capabilities, closely aligned with my background in offensive security and VAPT.
+{: .prompt-tip }
 
-[badge-ci]: https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github
-[badge-codacy]: https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy
-[badge-license]: https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod
-[badge-gem]: https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange
-[badge-open-container]: https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[contributors-avatar]: https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16&max=112
-[lib]: https://github.com/cotes2020/chirpy-static-assets
+![TryHackMe Red Teamer Quiz Result](/assets/img/red-teamer.png){: width="700" }
+
+_My result from TryHackMe's career aptitude quiz_
+
+---
+
+## Current Goals (2026)
+
+- ✔ Transition into SOC Engineering
+- ✔ Master Splunk & Microsoft Sentinel
+- ✔ Obtain CompTIA Security+
+- ✔ Complete Blue Team Labs
+- ✔ Learn Malware Analysis
+- ✔ Build open-source security tools
+- ✔ Publish 100 technical writeups
+- ✔ Pursue an MSc in Cybersecurity
+
+---
+
+## What You'll Find on This Blog
+
+**TryHackMe**  
+Walkthroughs with explanations, not just answers.
+
+**Hack The Box**  
+Enumeration and exploitation notes.
+
+**DFIR**  
+Incident investigations and log analysis.
+
+**Detection Engineering**  
+Sigma rules, Splunk SPL, detection use cases.
+
+**Research**  
+OWASP, Active Directory, Linux, and Windows internals.
+
+**Tools**  
+Scripts and utilities I've built along the way.
+
+---
+
+## Homelab
+
+- Windows Server
+- Active Directory
+- Kali Linux
+- Ubuntu
+- Elastic Stack
+- Splunk
+- Sysmon
+- VirtualBox / VMware
+- Security Onion *(planned)*
+
+---
+
+## Current Tech Stack
+
+**Languages**  
+Python · JavaScript · Bash · SQL
+
+**Operating Systems**  
+Windows · Linux
+
+**Security Tools**  
+Burp Suite · Metasploit · Nmap · Acunetix · Wireshark
+
+**SIEM**  
+Splunk · Elastic
+
+**Cloud**  
+Learning Azure · Learning AWS
+
+---
+
+## Beyond Cybersecurity
+
+Outside of work, I spend time reading security research, tinkering with side projects, and thinking about product design — a habit left over from my business analyst days. Always up for a good cup of coffee and a conversation about where this industry is headed.
+
+---
+
+## My Roadmap
+
+```
+2026 → Security+, Splunk, SOC, DFIR
+2027 → CEH, Cloud Security, Azure
+2028 → CISSP, Security Architect, Leadership
+Long term → AI-driven Security Solutions, Critical Infrastructure Security
+```
+
+---
+
+## Connect
+
+- **GitHub:** [github.com/jakwanaldin](https://github.com/jakwanaldin)
+- **LinkedIn:** [linkedin.com/in/jakwanaldin](https://www.linkedin.com/in/jakwanaldin)
+- **Email:** jakwanaldin@gmail.com
