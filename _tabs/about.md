@@ -64,7 +64,7 @@ That's why this blog focuses on practical walkthroughs, real lab exercises, and 
 > Red teamers emulate real-world adversaries — attacking, retaining access, and evading detection to test an organization's detection and response capabilities, closely aligned with my background in offensive security and VAPT.
 {: .prompt-tip }
 
-![TryHackMe Red Teamer Quiz Result](/assets/img/red-teamer.png){: width="700" }
+![TryHackMe Red Teamer Quiz Result](/assets/img/red-teamer.png)
 
 _My result from TryHackMe's career aptitude quiz_
 
