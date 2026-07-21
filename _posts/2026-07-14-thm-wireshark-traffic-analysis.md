@@ -41,6 +41,11 @@ Filter: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.window_size > 1024`
 
 **Q: Which scan type is used to scan the TCP port 80?**
 
+> **Notes from Task 2: Nmap Scans**
+>
+> The given filter shows the `TCP Connect` scan patterns in a capture file -> tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024
+{: .prompt-tip }
+
 **A: `TCP Connect`**
 
 ---
