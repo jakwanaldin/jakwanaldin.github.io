@@ -20,13 +20,10 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip, arp-spoofing
 
 ---
 
-<div style="background-color: #d4edda; border-left: 5px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 5px;">
-
-💡 **Tip**
-
-Use the hints provided throughout the room—they are very useful and helped me complete many of the tasks. If you get stuck, make sure to check the hints before moving on.
-
-</div>
+> 💡 **Tip**
+>
+> Use the hints provided throughout the room—they are very useful and helped me complete many of the tasks. If you get stuck, make sure to check the hints before moving on.
+{: .prompt-tip }
 
 ---
 
