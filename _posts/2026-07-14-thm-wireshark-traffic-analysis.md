@@ -34,7 +34,7 @@ Filter: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.window_size > 1024`
 
 **Q: Which scan type is used to scan the TCP port 80?**
 
-*Not captured in this run — re-check with* `tcp.port == 80 and tcp.flags.syn == 1` *filtered against the window-size thresholds from the Nmap filter table, then compare against the SYN-scan vs Connect-scan patterns.*
+**A: TCP Connect**
 
 ---
 
