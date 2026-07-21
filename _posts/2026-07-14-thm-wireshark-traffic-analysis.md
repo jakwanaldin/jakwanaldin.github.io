@@ -20,7 +20,10 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip, arp-spoofing
 
 ---
 
-**Tip:** Use the hints provided throughout the room—they are very useful and helped me complete many of the tasks. If you get stuck, make sure to check the hints before moving on.
+> 💡 **Tip**
+>
+> Use the hints provided throughout the room—they are very useful and helped me complete many of the tasks. If you get stuck, make sure to check the hints before moving on.
+{: .prompt-tip }
 
 ---
 
