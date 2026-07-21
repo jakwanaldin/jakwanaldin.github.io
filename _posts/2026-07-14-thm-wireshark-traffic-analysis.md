@@ -188,7 +188,7 @@ Followed the relevant TCP stream (`tcp.stream eq 714`) covering the upload sessi
 
 ![FTP upload and chmod attempt in the followed stream](/assets/img/thm-Wireshark-traffic-analysis/file-name.png)
 
-**A: `README`** — `STOR README` followed by `226 Transfer complete.` confirms the successful upload.
+**A: `resume.doc`** — `SIZE resume.doc` followed by `226 Transfer complete.` confirms the successful upload.
 
 ---
 
