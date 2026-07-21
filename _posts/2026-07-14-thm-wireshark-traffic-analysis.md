@@ -20,6 +20,10 @@ tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip, arp-spoofing
 
 ---
 
+**Tip:** Use the hints provided throughout the room—they are very useful and helped me complete many of the tasks. If you get stuck, make sure to check the hints before moving on.
+
+---
+
 ## Step 1 — Nmap Scan Fingerprinting
 
 **Q: What is the total number of the "TCP Connect" scans?**
