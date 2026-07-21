@@ -62,7 +62,11 @@ Filter: `icmp.type == 3 and icmp.code == 3`
 
 **Q: Which UDP port in the 55–70 port range is open?**
 
-*Not captured in this run — filter UDP traffic in that port range and check which port has no matching ICMP Type 3/Code 3 response (i.e., no "closed" signal).*
+Filter: `udp.dstport >= 50 and udp.dstport  <= 70`
+
+![UDP open port ](/assets/img/thm-Wireshark-traffic-analysis/open-port.png)
+
+**A: `68`** — the UDP traffic on this port does not receive an ICMP "Destination Unreachable — Port Unreachable" response, indicating that the port is open.
 
 ---
 
@@ -86,7 +90,11 @@ The confirmation step (not a graded question, but part of the investigation) was
 
 **Q: What is the MAC address of the host "Galaxy A30"?**
 
-*Not captured in this run — same workflow as below: filter `dhcp.option.hostname contains "Galaxy A30"` or the matching NBNS query, then read the Ethernet source MAC from the frame.*
+Filter: `dhcp.option.hostname contains "Galaxy"`
+
+![Mac Address of host Galaxy A30](assets/img/thm-Wireshark-traffic-analysis/mac-address.png)
+
+**A: `9a:81:41:cb:96:6c`** - the DHCP packet identifies the host as **Galaxy A30**, and the Ethernet source address shows the host's MAC address.
 
 ---
 
