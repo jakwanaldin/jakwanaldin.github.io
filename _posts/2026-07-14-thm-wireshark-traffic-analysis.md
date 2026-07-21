@@ -1,6 +1,6 @@
 ---
 title: "TryHackMe — Wireshark: Traffic Analysis"
-date: 2026-07-14 09:00:00 +0600
+date: 2026-07-20 09:00:00 +0600
 categories: [TryHackMe, Network Traffic Analysis]
 tags: [wireshark, packet-analysis, pcap, network-forensics, tcp-ip, arp-spoofing, dns-tunneling]
 ---
