@@ -323,11 +323,11 @@ Same Credentials window, cross-referenced with the FTP `PASS` command in packet 
 | # | Section | Question | Answer |
 |---|---|---|---|
 | 1 | Nmap | Total "TCP Connect" scans | `1000` |
-| 2 | Nmap | Scan type on TCP port 80 | *not captured* |
+| 2 | Nmap | Scan type on TCP port 80 | `TCP Connect` |
 | 3 | Nmap | "UDP close port" message count | `1083` |
-| 4 | Nmap | Open UDP port (55–70 range) | *not captured* |
+| 4 | Nmap | Open UDP port (55–70 range) | `68` |
 | 5 | ARP | ARP requests crafted by attacker | `284` |
-| 6 | DHCP/NBNS/Kerberos | MAC of "Galaxy A30" | *not captured* |
+| 6 | DHCP/NBNS/Kerberos | MAC of "Galaxy A30" | `9a:81:41:cb:96:6c` |
 | 7 | DHCP/NBNS/Kerberos | NBNS registration requests ("LIVALJM") | `16` |
 | 8 | DHCP/NBNS/Kerberos | Host requesting `172.16.13.85` | `Galaxy-A12` |
 | 9 | DHCP/NBNS/Kerberos | IP of user `u5` | `10[.]1[.]12[.]2` |
@@ -336,9 +336,9 @@ Same Credentials window, cross-referenced with the FTP `PASS` command in packet 
 | 12 | ICMP/DNS | Suspicious domain in DNS tunnel | `dataexfil[.]com` |
 | 13 | FTP | Incorrect login attempts | `737` |
 | 14 | FTP | File size accessed by `ftp` account | `39424 bytes` |
-| 15 | FTP | Uploaded document filename | `README` |
+| 15 | FTP | Uploaded document filename | `resume.doc` |
 | 16 | FTP | Command changing execute permissions | `SITE CHMOD 777 resume.doc` |
-| 17 | HTTP | Anomalous user-agent count | `5` |
+| 17 | HTTP | Anomalous user-agent count | `6` |
 | 18 | HTTP | Packet with UA spelling difference | `52` |
 | 19 | HTTP | Log4j attack starting packet | `444` |
 | 20 | HTTP | Log4j callback IP | `62[.]210[.]130[.]250` |
@@ -368,7 +368,7 @@ DNS long-subdomain filter → CNAME beacon to dataexfil.com
         │
         ▼
 FTP response-code filter → bruteforce count
-Followed TCP stream → malicious upload (README) + failed chmod on resume.doc
+Followed TCP stream → malicious upload (resume.doc) + failed chmod on resume.doc
         │
         ▼
 HTTP user-agent filters → recon tooling + Log4j JNDI payload (packet 444)
@@ -392,4 +392,3 @@ Tools → Credentials → cleartext creds across FTP/HTTP (bonus)
 - **Encrypted isn't invisible** — TLS handshake metadata (SNI, hello timing) is available without decryption, and with a captured `SSLKEYLOGFILE`, full HTTP2 payload inspection — including Export Objects — is possible after the fact.
 - **Built-in tooling is a starting point, not a verdict** — the Credentials tool generated both bonus answers instantly, but confirming *which* protocol/packet mattered still took a manual cross-check against the packet list.
 
-> Two Nmap answers and one DHCP/NBNS answer weren't captured with a screenshot during this run (marked *not captured* above). If you've got those, send them over and I'll fill in the table and add the matching write-up steps.
