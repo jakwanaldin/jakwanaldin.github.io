@@ -34,7 +34,7 @@ Filter: `tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.window_size > 1024`
 
 **Q: Which scan type is used to scan the TCP port 80?**
 
-**A: TCP Connect**
+**A: `TCP Connect`**
 
 ---
 
