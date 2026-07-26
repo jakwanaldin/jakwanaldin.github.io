@@ -7,6 +7,8 @@ tags: [networkminer, pcap, network-forensics, credential-extraction, file-carvin
 
 ## Overview
 
+![Room Photo](assets/img/thm-network-miner/network-miner.png)
+
 **Room:** [NetworkMiner](https://tryhackme.com/room/networkminer)
 
 **Module:** Network Traffic Analysis
@@ -41,6 +43,8 @@ NetworkMiner is built for **passive** analysis — it doesn't actively probe the
 
 ---
 
+![Room Photo](assets/img/thm-network-miner/network-miner-forensic.png)
+
 ## Tab-by-Tab Breakdown
 
 **Hosts** — every identified host with IP, MAC, OS fingerprint (via Satori/p0f), open ports, packet counts, and session direction.
@@ -65,6 +69,8 @@ Loaded the PCAP and read the frame count straight off the Case Panel/status bar 
 
 ![Total frame count in the Case Panel / status bar](/assets/img/thm-network-miner/frame-1.png)
 
+![Total frame count in the Case Panel / status bar](/assets/img/thm-network-miner/frame-2.png)
+
 **A: `460`**
 
 ---
@@ -74,6 +80,8 @@ Loaded the PCAP and read the frame count straight off the Case Panel/status bar 
 Opened the **Hosts** tab and sorted by MAC address. Every IP sharing `145.253.2.203`'s MAC lines up next to each other in the sorted list — a quick visual tell for NAT'd hosts or a MAC-spoofing conflict.
 
 ![Hosts sharing MAC address with 145.253.2.203](/assets/img/thm-network-miner/mac-address-1.png)
+
+![MAC address conflict detection in v2.7](/assets/img/thm-network-miner/mac-address-2png.png)
 
 **A: `2`**
 
@@ -201,8 +209,6 @@ The lab VM ships both major versions since several capabilities moved, were adde
 
 Confirmed by opening the same capture in both versions — only v2.7 surfaces the MAC-address correlation/conflict view described in the room's Version Differences task.
 
-![MAC address conflict detection in v2.7](/assets/img/thm-network-miner/mac-address-2png.png)
-
 **A: `2.7`**
 
 ---
@@ -224,6 +230,8 @@ Same v1.6-vs-v2.7 comparison — v1.6's packet detail view goes deeper than what
 **A: `1.6`**
 
 ---
+
+![Room Photo](assets/img/thm-network-miner/network-miner-exercise.png)
 
 ## Section 4 — Exercise: `case1.pcap`
 
