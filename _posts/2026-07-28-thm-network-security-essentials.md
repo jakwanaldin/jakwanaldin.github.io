@@ -90,6 +90,7 @@ cat firewall_logs.txt | grep "BLOCK"
 ![IP performing the port scan](/assets/img/thm-network-security-essentials/ip-performing-port-scan.png)
 
 **Q: Which IP address is performing the port scan?**
+
 **A: `203.0.113.10`** — filtering to `BLOCK` entries and reading the source column shows one IP hitting five-plus different destination ports on the same internal host within seconds.
 
 ### Scenario 2 — SQL Injection / Web Attack (WAF Log)
@@ -109,6 +110,7 @@ cat waf_logs.txt | grep "BLOCK"
 ![IP responsible for all blocked web attacks](/assets/img/thm-network-security-essentials/ip-responsible-for-all-blocked-web-attacks.png)
 
 **Q: In the WAF Logs, which single source IP is responsible for all the blocked web attacks?**
+
 **A: `198.51.100.12`** — filtering to `action=BLOCK` and reading the `src_ip` field across every blocked entry (SQLi, XSS, directory traversal) converges on one IP.
 
 ### Scenario 3 — VPN Brute-Force (VPN Gateway Log)
@@ -122,16 +124,19 @@ cat vpn_logs.txt | grep -c "FAILED_AUTH"
 ![Total failed brute-force attempt count](/assets/img/thm-network-security-essentials/number-of-brute-force-attack.png)
 
 **Q: In the VPN logs, how many brute-force attempts failed?**
+
 **A: `90`** — a straight count of every `FAILED_AUTH` line in the log.
 
 To isolate *which* IP was responsible rather than just the total, grouped the failures by source:
 ```bash
+cat vpn_logs.txt | grep "FAILED_AUTH" | cut -d " " -f5
 cat vpn_logs.txt | grep "FAILED_AUTH" | cut -d " " -f5 | cut -d ":" -f1 | uniq
 ```
 
 ![Suspicious IP behind the VPN brute-force](/assets/img/thm-network-security-essentials/brute-force-attack-ip.png)
 
 **Q: Which suspicious IP address was found attempting the brute-force attack against the VPN gateway?**
+
 **A: `45.137.22.13`**
 
 **Pattern cheat-sheet from this task (useful beyond this room):**
@@ -163,6 +168,7 @@ cat vpn_logs.txt | grep "FAILED_AUTH" | cut -d " " -f5 | cut -d ":" -f1 | uniq
 
 Started with blocked firewall traffic to find who's probing the perimeter:
 ```bash
+cat firewall.log 
 cat firewall.log | grep "BLOCK"
 cat firewall.log | grep "BLOCK" | cut -d " " -f5 | cut -d ":" -f1 | sort -nr | uniq -c
 ```
@@ -170,6 +176,7 @@ cat firewall.log | grep "BLOCK" | cut -d " " -f5 | cut -d ":" -f1 | sort -nr | u
 ![External IP performing the most reconnaissance](/assets/img/thm-network-security-essentials/most-recon.png)
 
 **Q: Examine the firewall logs. What external IP performed the most reconnaissance?**
+
 **A: `203.0.113.45`** — the source-IP column, grouped and counted, shows one IP far ahead of the rest of the block-count.
 
 To find *what* it was scanning, ran the same pipeline against the destination field instead:
@@ -180,17 +187,21 @@ cat firewall.log | grep "BLOCK" | cut -d " " -f7 | cut -d ":" -f1 | sort | uniq 
 ![Internal host targeted by scans](/assets/img/thm-network-security-essentials/internal-host.png)
 
 **Q: In the firewall log, which internal host was targeted by scans?**
+
 **A: `10.0.0.20`**
 
 ### Stage 2 — VPN Brute-Force / Credential Access
 
 ```bash
+cat vpn_auth.log
 cat vpn_auth.log | grep "FAIL"
+cat vpn_auth.log | grep "FAIL" | cut -d " " -f4 | sort | uniq -c 
 ```
 
 ![Failed VPN authentications, checking timing and username pattern](/assets/img/thm-network-security-essentials/ip-assigned-after-brute-force-1-check-time-and-fail.png)
 
 **Q: Which username was targeted in VPN logs?**
+
 **A: `svc_backup`** — the same service account name recurs across the block of failed attempts.
 
 Then filtered directly to that account to find where the failures ended and a login succeeded:
@@ -201,6 +212,7 @@ cat vpn_auth.log | grep "svc_backup"
 ![Internal IP assigned after the successful brute-forced login](/assets/img/thm-network-security-essentials/ip-assigned-after-brute-force-2.png)
 
 **Q: What internal IP was assigned after successful VPN login?**
+
 **A: `10.8.0.23`** — the `assigned_ip` field on the first `SUCCESS` entry immediately following the run of `FAIL`s.
 
 ### Stage 3 — Lateral Movement
@@ -211,6 +223,7 @@ cat firewall.log | grep <compromised-ip> | grep "ALLOW" | head
 ```
 Cross-referencing against `ids_alerts.log` confirmed matching signatures — SSH scans, RDP brute-force attempts, and specifically an **MS-SMB Lateral Movement** exploit alert:
 ```bash
+cat ids_alerts.log
 cat ids_alerts.log | grep "SMB"
 cat ids_alerts.log | grep "SMB" | cut -d " " -f21 | cut -d ":" -f2 | uniq
 ```
@@ -218,13 +231,14 @@ cat ids_alerts.log | grep "SMB" | cut -d " " -f21 | cut -d ":" -f2 | uniq
 ![Port used for lateral SMB attempts](/assets/img/thm-network-security-essentials/port-used-for-SMB.png)
 
 **Q: Which port was used for lateral SMB attempts?**
+
 **A: `445`** — extracted directly from the destination-port field of every `SMB` alert; every hit lands on the same port.
 
 ### Stage 4 — C2 Beaconing
 
 Searched IDS alerts directly for the Trojan signature:
 ```bash
-cat ids_alerts.log | grep C2 | head
+cat ids_alerts.log | grep "C2" | head
 ```
 Then pulled the source IP directly off the C2 alerts to identify the beaconing host:
 ```bash
@@ -234,6 +248,7 @@ cat ids_alerts.log | grep "C2" | cut -d " " -f20 | cut -d ":" -f1 | uniq
 ![Internal host beaconing to the C2](/assets/img/thm-network-security-essentials/host-beaconed.png)
 
 **Q: In the IDS logs, which host beaconed to the C2?**
+
 **A: `10.0.0.60`**
 
 Same alerts, this time reading the destination field to pull the external C2 server:
@@ -244,6 +259,7 @@ cat ids_alerts.log | grep "C2" | cut -d " " -f22 | cut -d ":" -f1 | uniq
 ![External IP associated with the C2 traffic](/assets/img/thm-network-security-essentials/ip-associated-with-C2.png)
 
 **Q: During the investigation, which IP was observed to be associated with C2?**
+
 **A: `198.51.100.77`** — consistently the destination on port 4444, a classic reverse-shell/C2 listener port.
 
 ### Stage 5 — Data Exfiltration
@@ -257,13 +273,12 @@ cat ids_alerts.log | grep "Exfiltration" | cut -d " " -f20 | cut -d ":" -f1 | un
 ![Host showing data exfiltration attempts](/assets/img/thm-network-security-essentials/data-exfiltration.png)
 
 **Q: Which host showed the exfiltration attempts?**
+
 **A: `10.0.0.51`** — every `ET INFO Possible HTTP POST Large Upload [Classification: Potential Data Exfiltration]` alert traces back to this one internal source, sending large POST uploads to an external destination on ports 80/8080.
 
 ### Method 2 — Splunk
 
 The same investigation is repeatable in Splunk against the pre-ingested `index="network_logs"` via the Search & Reporting app at `localhost:8000` — the manual `grep`/`cut`/`sort`/`uniq` pipeline above maps directly onto Splunk's `stats count by` and `search` syntax, useful once log volume makes command-line grepping impractical.
-
-![Splunk Search & Reporting against index="network_logs"](/assets/img/thm-network-security-essentials/image.png)
 
 ---
 
