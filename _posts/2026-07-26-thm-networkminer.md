@@ -1,5 +1,5 @@
 ---
-title: "TryHackMe — NetworkMiner"
+title: "TryHackMe — Network Miner"
 date: 2026-07-26 09:00:00 +0600
 categories: [TryHackMe, Network Traffic Analysis]
 tags: [networkminer, pcap, network-forensics, credential-extraction, file-carving, osint]
