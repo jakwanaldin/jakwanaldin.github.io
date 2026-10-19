@@ -5,11 +5,11 @@ order: 4
 
 ## About Me
 
-I'm a Security Analyst from Dhaka, Bangladesh with experience in web application penetration testing, DFIR, and product analysis.
+I'm an MSc Cybersecurity student at the National College of Ireland, Dublin, with 8 months of web and network penetration testing experience at Arena Web Security, where I ran 20+ tests and documented 80+ vulnerabilities, including 5 critical and 10 high severity.
 
-My cybersecurity journey started with learning web technologies before moving into offensive security, where I performed vulnerability assessments and penetration testing on real-world applications. More recently, I've been expanding into SOC operations, SIEM engineering, threat detection, and incident response.
+My cybersecurity journey started with learning web technologies before moving into offensive security, where I performed vulnerability assessments and penetration testing on real-world applications. Since starting my MSc, I've been expanding into SOC operations, SIEM engineering, threat detection, and incident response — investigating attacks in Splunk and analysing network traffic in Wireshark. I finished 1st in a TryHackMe SOC Simulator scenario after classifying 35 alerts.
 
-Alongside cybersecurity, I've worked as an Executive Business Analyst, which gives me a somewhat unusual perspective on how secure products actually get designed, built, and maintained — not just how they get broken.
+Alongside cybersecurity, I worked as a Business Analyst at US-Bangla Airlines, which gives me a somewhat unusual perspective on how secure products actually get designed, built, and maintained — not just how they get broken.
 
 I enjoy documenting what I learn through technical writeups, not just to record commands, but to explain the reasoning behind each step — the *why*, not just the *what*.
 
@@ -18,7 +18,7 @@ I enjoy documenting what I learn through technical writeups, not just to record 
 ## My Journey
 
 ```
-Computer Science Student
+Computer Science Student (AUST, Dhaka)
         ↓
 Frontend & Web Development
         ↓
@@ -28,12 +28,12 @@ VAPT Projects (Arena Web Security)
         ↓
 Business Analysis (US-Bangla Airlines)
         ↓
-SOC & DFIR
+MSc Cybersecurity (National College of Ireland, Dublin)
         ↓
-Future: Security Architecture & AI Security
+SOC & DFIR → Seeking a Cybersecurity Role
 ```
 
-Each stage fed into the next. Business analysis taught me how products actually get built and where security gets deprioritized under deadline pressure. VAPT taught me how attackers think. SOC and DFIR are where I'm connecting both — understanding not just how systems break, but how to watch for it happening in real time.
+Each stage fed into the next. Business analysis taught me how products actually get built and where security gets deprioritized under deadline pressure. VAPT taught me how attackers think. The MSc in Dublin is where I'm connecting both — understanding not just how systems break, but how to watch for it happening in real time, in a structured academic environment alongside hands-on labs.
 
 ---
 
@@ -45,8 +45,8 @@ Each stage fed into the next. Business analysis taught me how products actually 
 - Digital Forensics & Incident Response (DFIR)
 - Purple Teaming
 - Secure Software Development
-- AI Security
 - Cloud Security
+- AI Security
 
 ---
 
@@ -57,29 +57,17 @@ I believe cybersecurity is best learned by building, breaking, and documenting s
 That's why this blog focuses on practical walkthroughs, real lab exercises, and technical explanations — not just commands copy-pasted from a terminal history.
 
 ---
-## Career Aptitude
 
-> **TryHackMe Career Quiz Result: Red Teamer** 🎯
->
-> Red teamers emulate real-world adversaries — attacking, retaining access, and evading detection to test an organization's detection and response capabilities, closely aligned with my background in offensive security and VAPT.
-{: .prompt-tip }
+## Current Goals (2027)
 
-![TryHackMe Red Teamer Quiz Result](/assets/img/red-teamer.png)
-
-_My result from TryHackMe's career aptitude quiz_
-
----
-
-## Current Goals (2026)
-
-- ✔ Transition into SOC Engineering
-- ✔ Master Splunk & Microsoft Sentinel
+- ✔ Complete MSc Cybersecurity at NCI Dublin
 - ✔ Obtain CompTIA Security+
-- ✔ Complete Blue Team Labs
-- ✔ Learn Malware Analysis
+- ✔ Complete TryHackMe SOC Level 1
+- ✔ Obtain AWS Certified Solutions Architect Associate
+- ✔ Obtain AWS Certified Security Specialty
+- ✔ Transition into a SOC Analyst or Cybersecurity role
 - ✔ Build open-source security tools
 - ✔ Publish 100 technical writeups
-- ✔ Pursue an MSc in Cybersecurity
 
 ---
 
@@ -107,51 +95,47 @@ Scripts and utilities I've built along the way.
 
 ## Homelab
 
-- Windows Server
-- Active Directory
+- Windows Server 2025
 - Kali Linux
-- Ubuntu
+- VirtualBox
 - Elastic Stack
 - Splunk
 - Sysmon
-- VirtualBox / VMware
-- Security Onion *(planned)*
+- Cisco Packet Tracer
 
 ---
 
 ## Current Tech Stack
 
 **Languages**  
-Python · JavaScript · Bash · SQL
+Python · Java · C++ · Bash · PowerShell · SQL · TypeScript
+
+**Frameworks**  
+React · Next.js
 
 **Operating Systems**  
 Windows · Linux
 
 **Security Tools**  
-Burp Suite · Metasploit · Nmap · Acunetix · Wireshark
+Burp Suite · Metasploit · Nmap · Acunetix · Nessus · Wireshark
 
 **SIEM**  
-Splunk · Elastic
+Splunk · Elastic/Kibana
 
 **Cloud**  
-Learning Azure · Learning AWS
+Working toward AWS Solutions Architect & Security Specialty
 
 ---
 
 ## Beyond Cybersecurity
 
-Outside of work, I spend time reading security research, tinkering with side projects, and thinking about product design — a habit left over from my business analyst days. Always up for a good cup of coffee and a conversation about where this industry is headed.
+Outside of work and study, I enjoy cooking, archery with the NCI Archer Club, and gaming with the NCI Esports and Gaming Society. Always up for a good conversation about where this industry is headed.
 
 ---
 
-## My Roadmap
+## Availability
 
-```
-2026 → Security+, Splunk, SOC, DFIR
-2027 → CEH, Cloud Security, Azure
-2028 → CISSP, Security Architect, Leadership
-Long term → AI-driven Security Solutions, Critical Infrastructure Security
-```
+Currently based in Dublin, Ireland on a Stamp 2 visa, eligible for the Critical Skills Permit, and eligible to apply for Stamp 1G in October 2027, which allows unrestricted work for 2 years.
 
 ---
 
@@ -160,3 +144,4 @@ Long term → AI-driven Security Solutions, Critical Infrastructure Security
 - **GitHub:** [github.com/jakwanaldin](https://github.com/jakwanaldin)
 - **LinkedIn:** [linkedin.com/in/jakwanaldin](https://www.linkedin.com/in/jakwanaldin)
 - **Email:** jakwanaldin@gmail.com
+- **CV:** [Download PDF](/assets/cv/Jakwan-Al-Din-CV.pdf)
