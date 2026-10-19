@@ -11,10 +11,6 @@ layout: compress
   {%- endif -%}
 >
   {% include head.html lang=lang %}
-    <!-- Cache control -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
   <body>
     {% include sidebar.html lang=lang %}
     <div id="main-wrapper" class="d-flex justify-content-center">
@@ -23,33 +19,29 @@ layout: compress
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
 
-            <!-- ═══════════════════════════════════════════
-                 HERO
-            ═══════════════════════════════════════════ -->
+            <!-- ═══════════════ HERO ═══════════════ -->
             <div class="home-hero">
               <div class="hero-avatar">
                 <img src="{{ site.avatar }}" alt="{{ site.social.name }}" />
               </div>
               <div class="hero-content">
-                <h1 class="hero-name">{{ site.social.name }}</h1>
-                <p class="hero-title">Security Analyst &nbsp;·&nbsp; Cybersecurity Professional</p>
+                <h1 class="hero-name">Jakwan Al Din</h1>
+                <p class="hero-title">MSc Cybersecurity Student &nbsp;·&nbsp; Seeking a Cybersecurity Role</p>
                 <p class="hero-tagline">
-                  Cybersecurity professional with hands-on VAPT experience across 20+ web application
-                  penetration tests. Focused on transitioning into DevSecOps and Incident Response,
-                  with a strong foundation in SIEM, DFIR, and offensive security tooling.
+                  MSc Cybersecurity student at the National College of Ireland, Dublin, with 8 months of
+                  web and network penetration testing experience at Arena Web Security. Ran 20+ penetration
+                  tests, documented 80+ vulnerabilities, and now investigating attacks in Splunk and
+                  analysing network traffic in Wireshark — finished 1st in a TryHackMe SOC Simulator
+                  scenario after classifying 35 alerts.
                 </p>
                 <div class="hero-links">
-                  <a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener">
+                  <a href="https://github.com/jakwanaldin" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> GitHub
                   </a>
-                  {% for link in site.social.links %}
-                    {% if link contains 'linkedin' %}
-                  <a href="{{ link }}" target="_blank" rel="noopener">
+                  <a href="https://www.linkedin.com/in/jakwanaldin" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin"></i> LinkedIn
                   </a>
-                    {% endif %}
-                  {% endfor %}
-                  <a href="mailto:{{ site.social.email }}">
+                  <a href="mailto:jakwanaldin@gmail.com">
                     <i class="fas fa-envelope"></i> Email
                   </a>
                   <a href="/categories/">
@@ -58,60 +50,62 @@ layout: compress
                   <a href="/about/">
                     <i class="fas fa-user"></i> About
                   </a>
+                  <a href="/assets/cv/Jakwan-Al-Din-CV.pdf" target="_blank" rel="noopener" class="hero-link-cv">
+                    <i class="fas fa-file-arrow-down"></i> Download CV
+                  </a>
                 </div>
               </div>
             </div>
 
-            <!-- ═══════════════════════════════════════════
-                 SECTIONS
-            ═══════════════════════════════════════════ -->
             <div class="home-sections">
 
-              <!-- Experience -->
-<section class="home-section">
-    <h2><i class="fas fa-shield-halved"></i> Experience</h2>
+              <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+              <section class="home-section">
+                <h2><i class="fas fa-shield-halved"></i> Experience</h2>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Trainee Ethical Hacker & Cybersecurity Expert -(Security Analyst VAPT role)</span>
-            <span class="exp-company">Arena Web Security</span>
-        </div>
-        <p>
-            • Conducted 20+ comprehensive web application penetration tests.<br>
-            • Identified over 80 security vulnerabilities, including 15 high/critical severity findings.<br>
-            • Leveraged industry-standard tools: Burp Suite, Metasploit, Acunetix, Nmap, Wireshark, and Kali Linux.
-        </p>
-    </div>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">Trainee Ethical Hacker &amp; Cybersecurity Expert</span>
+                    <span class="exp-company">Arena Web Security</span>
+                    <span class="exp-dates">Jan 2025 – Aug 2025</span>
+                  </div>
+                  <p>Ran 20+ web and network penetration tests with Burp Suite, Nmap, Metasploit and Kali Linux, finding SQL injection, XSS, CSRF, LFI, RCE and web shell uploads. Scanned targets with Acunetix and Nessus to rate vulnerabilities by CVSS severity — documented 80+ vulnerabilities, including 5 critical and 10 high severity, with prioritised remediation reports. Captured and analysed network traffic in Wireshark for incident investigation, and carried out 10+ social engineering assessments (phishing, vishing, pretexting).</p>
+                </div>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Executive Business Analyst</span>
-            <span class="exp-company">US-Bangla Airlines</span>
-        </div>
-        <p>
-            • Elicited and documented business requirements for the Product Department<br>
-            • Performed feature mapping and in-depth process analysis to create new product.<br>
-            • Designed product prototype and working as a frontend developer.
-        </p>
-    </div>
-</section>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">Business Analyst</span>
+                    <span class="exp-company">US-Bangla Airlines, Product Department</span>
+                    <span class="exp-dates">Sep 2025 – Aug 2026</span>
+                  </div>
+                  <p>Gathered and analysed requirements, wrote user stories, workflows and acceptance criteria for development and testing. Built front-end prototypes for the user and extranet modules of a hotel booking app and website with Next.js, TypeScript and React, including a role-based user management module.</p>
+                </div>
+              </section>
 
-              <!-- Skills -->
+              <!-- ═══════════════ SKILLS ═══════════════ -->
               <section class="home-section">
                 <h2><i class="fas fa-code"></i> Technical Skills</h2>
                 <div class="skills-grid">
                   <div class="skill-group">
-                    <h4>Penetration Testing</h4>
+                    <h4>Security Tools</h4>
                     <div class="skill-tags">
                       <span>Burp Suite</span><span>Metasploit</span><span>Nmap</span>
-                      <span>Acunetix</span><span>Wireshark</span><span>Kali Linux</span>
+                      <span>Acunetix</span><span>Nessus</span><span>Wireshark</span>
+                      <span>Kali Linux</span><span>Cisco Packet Tracer</span>
                     </div>
                   </div>
                   <div class="skill-group">
-                    <h4>SIEM &amp; DFIR</h4>
+                    <h4>SIEM &amp; Monitoring</h4>
                     <div class="skill-tags">
                       <span>Splunk SPL</span><span>Elastic/Kibana</span><span>Sysmon</span>
-                      <span>Windows Event Logs</span><span>MITRE ATT&amp;CK</span>
+                      <span>Windows Event Logs</span><span>MITRE ATT&amp;CK</span><span>IDS/IPS</span>
+                    </div>
+                  </div>
+                  <div class="skill-group">
+                    <h4>Networking</h4>
+                    <div class="skill-tags">
+                      <span>TCP/IP</span><span>HTTP</span><span>DNS</span><span>DHCP</span>
+                      <span>Subnetting</span><span>Routing</span><span>VPN</span>
                     </div>
                   </div>
                   <div class="skill-group">
@@ -121,68 +115,98 @@ layout: compress
                     </div>
                   </div>
                   <div class="skill-group">
-                    <h4>Scripting &amp; Dev</h4>
+                    <h4>Programming &amp; Scripting</h4>
                     <div class="skill-tags">
-                      <span>Python</span><span>Bash</span><span>SQL</span>
+                      <span>Python</span><span>Java</span><span>C++</span><span>Bash</span>
+                      <span>PowerShell</span><span>SQL</span><span>TypeScript</span>
+                      <span>React</span><span>Next.js</span>
+                    </div>
+                  </div>
+                  <div class="skill-group">
+                    <h4>Business Analysis</h4>
+                    <div class="skill-tags">
+                      <span>Requirements Gathering</span><span>BRDs</span><span>User Stories</span>
+                      <span>Acceptance Criteria</span><span>Stakeholder Communication</span>
                     </div>
                   </div>
                 </div>
               </section>
 
-             <!-- Education Section -->
-<section class="home-section">
-    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+              <!-- ═══════════════ EDUCATION ═══════════════ -->
+              <section class="home-section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
 
-    <div class="edu-item">
-        <strong>BSc Computer Science &amp; Engineering</strong> — AUST, Dhaka
-        <span class="edu-badge">CGPA 3.225/4.00</span>
-    </div>
+                <div class="edu-item">
+                  <strong>MSc Cybersecurity</strong> — National College of Ireland (NCI), Dublin, Ireland
+                  <span class="edu-badge">Sep 2026 – Present · 75th Anniversary Scholar</span>
+                </div>
+                <div class="edu-item">
+                  <strong>BSc (Engineering), Computer Science &amp; Engineering</strong> — AUST, Dhaka, Bangladesh
+                  <span class="edu-badge">2020 – 2025 · 2:1 equivalent</span>
+                </div>
+              </section>
 
-    <div class="edu-item">
-        <strong>HSC (Higher Secondary Certificate)</strong> — Dhaka College, Dhaka
-        <span class="edu-badge">GPA: 5.00</span>
-    </div>
+              <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+              <section class="home-section">
+                <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                <div class="edu-item">
+                  <strong>Google Cybersecurity Professional Certificate</strong>
+                  <span class="edu-badge">Completed, Mar 2026</span>
+                </div>
+                <div class="edu-item">
+                  <strong>CompTIA Security+</strong>
+                  <span class="edu-badge">Expected 2027</span>
+                </div>
+                <div class="edu-item">
+                  <strong>TryHackMe SOC Level 1</strong>
+                  <span class="edu-badge">Expected 2027</span>
+                </div>
+                <div class="edu-item">
+                  <strong>AWS Certified Solutions Architect Associate</strong>
+                  <span class="edu-badge">Expected 2027</span>
+                </div>
+                <div class="edu-item">
+                  <strong>AWS Certified Security Specialty</strong>
+                  <span class="edu-badge">Expected 2027</span>
+                </div>
+              </section>
 
-    <div class="edu-item">
-        <strong>SSC (Secondary School Certificate)</strong> — Ideal School and College, Dhaka
-        <span class="edu-badge">GPA: 5.00</span>
-    </div>
-</section>
+              <!-- ═══════════════ PROJECTS ═══════════════ -->
+              <section class="home-section">
+                <h2><i class="fas fa-diagram-project"></i> Projects</h2>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">SOC Simulator — Phishing Unfolding</span>
+                    <span class="exp-company">TryHackMe</span>
+                  </div>
+                  <p>Worked 35 alerts, separating false positives from a real attack chain running from Active Directory reconnaissance to DNS exfiltration. Finished 1st with 1,105 points. Tools: SIEM, Sysmon logs.</p>
+                </div>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">Home Pentest Lab</span>
+                    <span class="exp-company">NCI Network Security &amp; Penetration Testing module</span>
+                  </div>
+                  <p>Built a virtual lab with a Kali Linux attacker VM and a Windows Server 2025 target VM. Tools: VirtualBox, Kali Linux, Windows Server 2025.</p>
+                </div>
+                <div class="exp-item">
+                  <div class="exp-header">
+                    <span class="exp-role">Investigating with Splunk</span>
+                    <span class="exp-company">TryHackMe</span>
+                  </div>
+                  <p>Traced a backdoor account (Event ID 4720) through Sysmon and PowerShell script block logs in Splunk SPL, and decoded payloads in CyberChef.</p>
+                </div>
+              </section>
 
-<!-- Certifications Section -->
-<section class="home-section">
-    <h2><i class="fas fa-certificate"></i> Certifications</h2>
+              <!-- ═══════════════ LANGUAGE ═══════════════ -->
+              <section class="home-section">
+                <h2><i class="fas fa-language"></i> Language &amp; Proficiency</h2>
+                <div class="edu-item">
+                  <strong>IELTS</strong> — Overall 7.5 · CEFR C1
+                  <span class="edu-badge">L: 9.0 &nbsp;R: 7.5 &nbsp;W: 6.5 &nbsp;S: 7.5</span>
+                </div>
+              </section>
 
-    <div class="edu-item">
-        <strong>Google Cybersecurity Professional Certificate</strong>
-        <span class="edu-badge completed">Completed</span>
-    </div>
-
-    <div class="edu-item">
-        <strong>CompTIA Security+</strong>
-        <span class="edu-badge in-progress">In Progress</span>
-    </div>
-</section>
-
-<!-- Language & Proficiency Section (IELTS) -->
-<section class="home-section">
-    <h2><i class="fas fa-language"></i> Language &amp; Proficiency</h2>
-
-    <div class="edu-item">
-        <strong>IELTS (International English Language Testing System)</strong>
-
-        <!-- Separated & styled badge container -->
-        <div class="ielts-container">
-            <span class="edu-badge overall-badge">Overall 7.5</span>
-            <span class="edu-badge level-badge">CEFR Level C1</span>
-            <span class="edu-badge skill-badge">L: 9</span>
-            <span class="edu-badge skill-badge">R: 7.5</span>
-            <span class="edu-badge skill-badge">W: 6.5</span>
-            <span class="edu-badge skill-badge">S: 7.5</span>
-        </div>
-    </div>
-</section>
-              <!-- Latest Writeups -->
+              <!-- ═══════════════ LATEST WRITEUPS ═══════════════ -->
               <section class="home-section">
                 <h2><i class="fas fa-pen-to-square"></i> Latest Writeups</h2>
                 <div class="recent-posts">
@@ -207,7 +231,6 @@ layout: compress
 
           </main>
 
-          <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
               {% include_cached update-list.html lang=lang %}
@@ -235,28 +258,28 @@ layout: compress
     {% endif %}
     {% include_cached search-loader.html lang=lang %}
 
-    <!-- ═══════════════════════════════════════════
-         STYLES
-    ═══════════════════════════════════════════ -->
     <style>
     .home-hero{display:flex;align-items:center;gap:2rem;padding:2.5rem 0 2rem;border-bottom:1px solid var(--border-color);margin-bottom:2rem;flex-wrap:wrap}
     .hero-avatar img{width:130px;height:130px;border-radius:50%;object-fit:cover;border:3px solid var(--link-color);flex-shrink:0}
     .hero-content{flex:1;min-width:220px}
     .hero-name{font-size:2rem;font-weight:700;margin:0 0 .25rem;color:var(--heading-color)}
     .hero-title{font-size:1rem;color:var(--text-muted-color);margin:0 0 .75rem;font-weight:500}
-    .hero-tagline{font-size:.95rem;line-height:1.6;color:var(--text-color);margin:0 0 1.25rem;max-width:600px}
+    .hero-tagline{font-size:.95rem;line-height:1.6;color:var(--text-color);margin:0 0 1.25rem;max-width:640px}
     .hero-links{display:flex;flex-wrap:wrap;gap:.6rem}
     .hero-links a{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border-radius:20px;font-size:.85rem;font-weight:500;border:1px solid var(--link-color);color:var(--link-color);text-decoration:none;transition:background .2s,color .2s}
     .hero-links a:hover{background:var(--link-color);color:#fff}
+    .hero-link-cv{border-color:#2ecc71 !important;color:#2ecc71 !important}
+    .hero-link-cv:hover{background:#2ecc71 !important;color:#fff !important}
     .home-sections{display:flex;flex-direction:column;gap:2rem;margin-bottom:2rem}
     .home-section{background:var(--card-bg);border:1px solid var(--border-color);border-radius:10px;padding:1.5rem 1.75rem}
     .home-section h2{font-size:1.1rem;font-weight:700;margin:0 0 1.25rem;color:var(--heading-color);display:flex;align-items:center;gap:.5rem}
     .home-section h2 i{color:var(--link-color)}
     .exp-item{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border-color)}
     .exp-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
-    .exp-header{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin-bottom:.3rem}
+    .exp-header{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem}
     .exp-role{font-weight:600;color:var(--heading-color);font-size:.95rem}
     .exp-company{font-size:.85rem;color:var(--link-color)}
+    .exp-dates{font-size:.78rem;color:var(--text-muted-color);margin-left:auto}
     .exp-item p{font-size:.88rem;color:var(--text-color);line-height:1.5;margin:0}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem}
     .skill-group h4{font-size:.85rem;font-weight:600;color:var(--text-muted-color);text-transform:uppercase;letter-spacing:.05em;margin:0 0 .6rem}
@@ -273,7 +296,7 @@ layout: compress
     .post-card-meta i{margin-right:.25rem}
     .btn-all-posts{display:inline-block;padding:.45rem 1.2rem;border:1px solid var(--link-color);border-radius:20px;color:var(--link-color);font-size:.85rem;font-weight:500;text-decoration:none;transition:background .2s,color .2s}
     .btn-all-posts:hover{background:var(--link-color);color:#fff}
-    @media(max-width:600px){.home-hero{flex-direction:column;text-align:center}.hero-links{justify-content:center}.skills-grid{grid-template-columns:1fr 1fr}.home-section{padding:1.1rem 1rem}}
+    @media(max-width:600px){.home-hero{flex-direction:column;text-align:center}.hero-links{justify-content:center}.skills-grid{grid-template-columns:1fr 1fr}.home-section{padding:1.1rem 1rem}.exp-dates{margin-left:0}}
     </style>
 
   </body>
