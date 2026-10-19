@@ -17,3 +17,9 @@
 - type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
   url: 'https://www.linkedin.com/in/jakwanaldin' 
+
+- type: cv
+  icon: "fas fa-file-arrow-down"
+  url: "/assets/cv/Jakwan-Aldin-CV.pdf"
+  noblank: true
+  download: true
