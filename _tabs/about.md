@@ -20,20 +20,20 @@ I enjoy documenting what I learn through technical writeups, not just to record 
 ```
 Computer Science Student (AUST, Dhaka)
         ↓
-Frontend & Web Development
-        ↓
 Web Application Security
         ↓
 VAPT Projects (Arena Web Security)
         ↓
 Business Analysis (US-Bangla Airlines)
         ↓
+Frontend Development & Prototype Design (US-Bangla Airlines)
+        ↓
 MSc Cybersecurity (National College of Ireland, Dublin)
         ↓
 SOC & DFIR → Seeking a Cybersecurity Role
 ```
 
-Each stage fed into the next. Business analysis taught me how products actually get built and where security gets deprioritized under deadline pressure. VAPT taught me how attackers think. The MSc in Dublin is where I'm connecting both — understanding not just how systems break, but how to watch for it happening in real time, in a structured academic environment alongside hands-on labs.
+Each stage fed into the next. Joining US-Bangla Airlines as a Business Analyst taught me how products actually get built and where security gets deprioritized under deadline pressure; moving into frontend development and prototype design there showed me the same product from the builder's side. VAPT taught me how attackers think. The MSc in Dublin is where I'm connecting all three — understanding not just how systems break, but how to watch for it happening in real time, in a structured academic environment alongside hands-on labs.
 
 ---
 
