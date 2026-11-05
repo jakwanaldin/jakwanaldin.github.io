@@ -69,7 +69,12 @@ layout: compress
                     <span class="exp-company">Arena Web Security</span>
                     <span class="exp-dates">Jan 2025 – Aug 2025</span>
                   </div>
-                  <p>Ran 20+ web and network penetration tests with Burp Suite, Nmap, Metasploit and Kali Linux, finding SQL injection, XSS, CSRF, LFI, RCE and web shell uploads. Scanned targets with Acunetix and Nessus to rate vulnerabilities by CVSS severity — documented 80+ vulnerabilities, including 5 critical and 10 high severity, with prioritised remediation reports. Captured and analysed network traffic in Wireshark for incident investigation, and carried out 10+ social engineering assessments (phishing, vishing, pretexting).</p>
+                  <ul class="exp-bullets">
+                    <li>Ran over 20 web and network penetration tests using Burp Suite, Nmap, Metasploit and Kali Linux, identifying SQL injection, XSS, CSRF, LFI, RCE and web shell upload vulnerabilities.</li>
+                    <li>Scanned targets with Acunetix and Nessus to rate vulnerabilities by CVSS severity, documenting 80 vulnerabilities in total — 5 critical and 10 high severity — each with a prioritised remediation report.</li>
+                    <li>Captured and analysed network traffic in Wireshark to collect technical evidence supporting incident investigations.</li>
+                    <li>Carried out over 10 social engineering assessments (phishing, vishing, pretexting) to test organisational security awareness.</li>
+                  </ul>
                 </div>
 
                 <div class="exp-item">
@@ -78,7 +83,12 @@ layout: compress
                     <span class="exp-company">US-Bangla Airlines, Product Department</span>
                     <span class="exp-dates">Sep 2025 – Aug 2026</span>
                   </div>
-                  <p>Joined as Business Analyst — gathered and analysed requirements, wrote user stories, workflows and acceptance criteria for development and testing, and worked with stakeholders to agree goals and deliverables. Later moved into front-end development and prototype design, building front-end prototypes for the user and extranet modules of a hotel booking app and website with Next.js, TypeScript and React, including a role-based user management module.</p>
+                  <ul class="exp-bullets">
+                    <li>Joined as Business Analyst — gathered and analysed requirements, wrote user stories, workflows and acceptance criteria for development and testing.</li>
+                    <li>Worked with stakeholders and technical teams to agree goals and deliverables for the product roadmap.</li>
+                    <li>Later moved into front-end development and prototype design, building front-end prototypes for the user and extranet modules of a hotel booking app and website using Next.js, TypeScript and React.</li>
+                    <li>Designed and built a role-based user management module as part of the same prototype.</li>
+                  </ul>
                 </div>
               </section>
 
@@ -281,6 +291,10 @@ layout: compress
     .exp-company{font-size:.85rem;color:var(--link-color)}
     .exp-dates{font-size:.78rem;color:var(--text-muted-color);margin-left:auto}
     .exp-item p{font-size:.88rem;color:var(--text-color);line-height:1.5;margin:0}
+    .exp-bullets{margin:0;padding-left:1.1rem;list-style:none}
+    .exp-bullets li{font-size:.88rem;color:var(--text-color);line-height:1.55;margin-bottom:.45rem;position:relative;padding-left:.9rem}
+    .exp-bullets li:last-child{margin-bottom:0}
+    .exp-bullets li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--link-color)}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem}
     .skill-group h4{font-size:.85rem;font-weight:600;color:var(--text-muted-color);text-transform:uppercase;letter-spacing:.05em;margin:0 0 .6rem}
     .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
